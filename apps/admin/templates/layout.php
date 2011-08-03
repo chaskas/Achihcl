@@ -32,26 +32,26 @@
             <!-- END-Sidebar Profile links -->
 
             <ul id="main-nav">  <!-- Accordion Menu -->
-
-              <li>
-                <a href="<?php echo url_for('guard/users');?>" class="nav-top-item no-submenu <?php if($sf_context->getModuleName()=='sfGuardUser') echo "current"; ?> "> <!-- Add the class "no-submenu" to menu items with no sub menu -->
-                  Usuarios
-                </a>
-              </li>
-              <ul>
-                <li><a <?php if($sf_context->getActionName()=='new' && $sf_context->getModuleName()=='sfGuardUser') echo "class='current'"; ?> href="<?php echo url_for('sf_guard_user_new'); ?>">Nuevo usuario</a></li>
-                <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='sfGuardUser') echo "class='current'"; ?> href="<?php echo url_for('sf_guard_user'); ?>">Listar sugerencias</a></li> <!-- Add class "current" to sub menu items also -->
-              </ul>
               
               <li>
-                <a href="<?php echo url_for('comision/index');?>" class="nav-top-item no-submenu <?php if($sf_context->getModuleName()=='comision') echo "current"; ?> "> <!-- Add the class "no-submenu" to menu items with no sub menu -->
+                <a href="<?php echo url_for('comision/index'); ?>" class="nav-top-item <?php if($sf_context->getModuleName()=='comision') echo "current"; ?> ">
                   Comisiones
                 </a>
+                <ul>
+                  <li><a <?php if($sf_context->getActionName()=='new' && $sf_context->getModuleName()=='comision') echo "class='current'"; ?> href="<?php echo url_for('comision/new'); ?>">Nueva comision</a></li>
+                  <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='comision') echo "class='current'"; ?> href="<?php echo url_for('comision/index'); ?>">Listar comisiones</a></li>
+                </ul>
               </li>
-              <ul>
-                <li><a <?php if($sf_context->getActionName()=='new' && $sf_context->getModuleName()=='comision') echo "class='current'"; ?> href="<?php echo url_for('comision/new'); ?>">Nueva comision</a></li>
-                <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='comision') echo "class='current'"; ?> href="<?php echo url_for('comision/index'); ?>">Listar comisiones</a></li> <!-- Add class "current" to sub menu items also -->
-              </ul>
+
+              <li>
+                <a href="<?php echo url_for('comision/index');?>" class="nav-top-item <?php if($sf_context->getModuleName()=='comisaaion') echo "current"; ?> ">
+                  Comisiones
+                </a>
+                <ul>
+                  <li><a <?php if($sf_context->getActionName()=='newasd' && $sf_context->getModuleName()=='comisaaion') echo "class='current'"; ?> href="<?php echo url_for('comision/new'); ?>">Nueva comision</a></li>
+                  <li><a <?php if($sf_context->getActionName()=='indeasdx' && $sf_context->getModuleName()=='comiaasion') echo "class='current'"; ?> href="<?php echo url_for('comision/index'); ?>">Listar comisiones</a></li>
+                </ul>
+              </li>
 
             </ul> <!-- End #main-nav -->
           <?php endif; ?>

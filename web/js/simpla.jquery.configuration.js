@@ -24,16 +24,16 @@ $(document).ready(function(){
 		
 		$("#main-nav li .nav-top-item").hover(
 			function () {
-				$(this).stop().animate({ paddingRight: "25px" }, 200);
+				$(this).stop().animate({paddingRight: "25px"}, 200);
 			}, 
 			function () {
-				$(this).stop().animate({ paddingRight: "15px" });
+				$(this).stop().animate({paddingRight: "15px"});
 			}
 		);
 
     //Minimize Content Box
 		
-		$(".content-box-header h3").css({ "cursor":"s-resize" }); // Give the h3 in Content Box Header a different cursor
+		$(".content-box-header h3").css({"cursor":"s-resize"}); // Give the h3 in Content Box Header a different cursor
 		$(".closed-box .content-box-content").hide(); // Hide the content of the header if it has the class "closed"
 		$(".closed-box .content-box-tabs").hide(); // Hide the tabs in the header if it has the class "closed"
 		
@@ -51,16 +51,16 @@ $(document).ready(function(){
 		$('ul.content-box-tabs li a.default-tab').addClass('current'); // Add the class "current" to the default tab
 		$('.content-box-content div.default-tab').show(); // Show the div with class "default-tab"
 		
-		$('.content-box ul.content-box-tabs li a').click( // When a tab is clicked...
-			function() { 
-				$(this).parent().siblings().find("a").removeClass('current'); // Remove "current" class from all tabs
-				$(this).addClass('current'); // Add class "current" to clicked tab
-				var currentTab = $(this).attr('href'); // Set variable "currentTab" to the value of href of clicked tab
-				$(currentTab).siblings().hide(); // Hide all content divs
-				$(currentTab).show(); // Show the content div with the id equal to the id of clicked tab
-				return false; 
-			}
-		);
+//  $('.content-box ul.content-box-tabs li a').click( // When a tab is clicked...
+//    function() {
+//      $(this).parent().siblings().find("a").removeClass('current'); // Remove "current" class from all tabs
+//      $(this).addClass('current'); // Add class "current" to clicked tab
+//      var currentTab = $(this).attr('href'); // Set variable "currentTab" to the value of href of clicked tab
+//      $(currentTab).siblings().hide(); // Hide all content divs
+//      $(currentTab).show(); // Show the content div with the id equal to the id of clicked tab
+//      return false;
+//    }
+//    );
 
     //Close button:
 		
