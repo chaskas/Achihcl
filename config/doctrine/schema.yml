@@ -1,0 +1,45 @@
+# config/doctrine/schema.yml
+---
+Comision:
+  columns:
+    nombre:         { type: text, notnull: true }
+    descripcion:    { type: longtext, notnull: true }
+
+Subcomision:
+  columns:
+    nombre:         { type: text, notnull: true }
+    descripcion:    { type: longtext, notnull: true }
+    comision_id:    { type: integer, notnull: true }
+  relations:
+    Comision:       { onDelete: CASCADE, local: comision_id, foreign: id, foreignAlias: Subcomisiones }
+
+Foro:
+  actAs:            { Timestampable: ~ ,Signable: ~ }
+  columns:
+    nombre:         { type: text, notnull: true }
+    descripcion:    { type: longtext, notnull: true }
+    ntopics:        { type: int, notnull: true, default: '0' }
+    nposts:         { type: int, notnull: true, default: '0' }
+    subcomision_id: { type: integer, notnull: true }
+  relations:
+    Subcomision:    { onDelete: CASCADE, local: subcomision_id, foreign: id, foreignAlias: Foros }
+
+Tema:
+  actAs:            { Timestampable: ~ ,Signable: ~ }
+  columns:
+    first_post_id:  { type: integer, notnull: true }
+    foro_id:        { type: integer, notnull: true }
+  relations:
+    Foro:           { onDelete: CASCADE, local: foro_id, foreign: id, foreignAlias: Temas }
+    Post:           { onDelete: CASCADE, local: first_post_id, foreign: id, foreignType: one }
+
+Post:
+  actAs:            { Timestampable: ~ ,Signable: ~ }
+  columns:
+    asunto:         { type: text, notnull: true }
+    cuerpo:         { type: longtext, notnull: true }
+    tema_id:        { type: integer, notnull: true }
+    foro_id:        { type: integer, notnull: true }
+  relations:
+    Tema:           { onDelete: CASCADE, local: tema_id, foreign: id, foreignAlias: Posts }
+    Foro:           { onDelete: CASCADE, local: foro_id, foreign: id, foreignAlias: Posts }
