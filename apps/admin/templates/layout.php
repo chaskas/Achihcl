@@ -8,8 +8,7 @@
     <?php include_javascripts() ?>
   </head>
   <body>
-    <div id="body-wrapper"> <!-- Wrapper for the radial gradient background -->
-
+    <div id="body-wrapper"> 
       <div id="sidebar">
         <div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->
 
@@ -76,7 +75,7 @@
         <div class="clear"></div>
 
         <div id="footer">
-          <small> <!-- Remove this notice or replace it with whatever you want -->
+          <small>
             &#169; Copyright 2011 | Powered by <a href="http://www.webdevel.cl">WebDevel.cl</a>
           </small>
         </div><!-- End #footer -->

@@ -336,10 +336,10 @@ ul.content-box-tabs li a.current {
 
 /************ Table ************/
 
-#main-content table {
+/*#main-content table {
   width: 100%;
   border-collapse: collapse;
-}
+}*/
 
 #main-content table thead th {
   font-weight: bold;
@@ -359,11 +359,11 @@ ul.content-box-tabs li a.current {
   background: #f3f3f3;
 }
 
-#main-content table td,
+/*#main-content table td,
 #main-content table th {
   padding: 10px;
   line-height: 1.3em;
-}        
+}        */
 
 #main-content table tfoot td .bulk-actions {
   padding: 15px 0 5px 0;

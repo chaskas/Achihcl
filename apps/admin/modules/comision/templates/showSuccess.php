@@ -10,7 +10,7 @@
     </tr>
     <tr>
       <th>Descripcion:</th>
-      <td><?php echo $comision->getDescripcion() ?></td>
+      <td><?php echo $comision->getRawValue()->getDescripcion() ?></td>
     </tr>
   </tbody>
 </table>

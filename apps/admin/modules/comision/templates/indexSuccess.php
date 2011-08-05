@@ -32,7 +32,7 @@
             <tr <?php if ($i % 2 != 0)echo "class='alt-row'"; ?>>
               <td></td>
               <td><?php echo $comision->getNombre() ?></td>
-              <td><?php echo $comision->getDescripcion() ?></td>
+              <td><?php echo $comision->getRawValue()->getDescripcion() ?></td>
               <td>
                 <!-- Icons -->
                 <a href="<?php echo url_for('comision/edit?id=' . $comision->getId()) ?>" title="Editar"><?php echo image_tag('icons/pencil.png', 'alt=Editar'); ?></a>
