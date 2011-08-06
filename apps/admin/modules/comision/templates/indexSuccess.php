@@ -32,11 +32,12 @@
             <tr <?php if ($i % 2 != 0)echo "class='alt-row'"; ?>>
               <td></td>
               <td><?php echo $comision->getNombre() ?></td>
-              <td><?php echo $comision->getRawValue()->getDescripcion() ?></td>
+              <td><?php echo tools::getResumeShort(strip_tags($comision->getRawValue()->getDescripcion())) ?></td>
               <td>
                 <!-- Icons -->
-                <a href="<?php echo url_for('comision/edit?id=' . $comision->getId()) ?>" title="Editar"><?php echo image_tag('icons/pencil.png', 'alt=Editar'); ?></a>
-                <?php echo link_to('<img src="/images/icons/cross.png" alt="Eliminar" />', 'comision/delete?id='.$comision->getId(), array('method' => 'delete', 'confirm' => '¿Estas seguro?')) ?>
+                <?php echo link_to(image_tag('icons/pencil.png',array('alt'=>'Editar','title'=>'Editar')), 'comision/edit?id='.$comision->getId()) ?>
+                <?php echo link_to(image_tag('icons/cross.png',array('alt'=>'Eliminar','title'=>'Eliminar')), 'comision/delete?id='.$comision->getId(), array('method' => 'delete', 'confirm' => '¿Estas seguro?')) ?>
+                <?php echo link_to(image_tag('icons/hammer_screwdriver.png',array('alt'=>'Ver subcomisiones','title'=>'Ver Subcomisiones')), 'comision/show?id='.$comision->getId()) ?>
               </td>
             </tr>
           <?php $i++; ?>
