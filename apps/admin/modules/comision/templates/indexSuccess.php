@@ -16,7 +16,7 @@
 
     <div class="tab-content default-tab" id="tab1" style="display: block; ">
 
-      <table>
+      <table class="listados">
         <thead>
           <tr>
             <th></th>
@@ -37,7 +37,7 @@
                 <!-- Icons -->
                 <?php echo link_to(image_tag('icons/pencil.png',array('alt'=>'Editar','title'=>'Editar')), 'comision/edit?id='.$comision->getId()) ?>
                 <?php echo link_to(image_tag('icons/cross.png',array('alt'=>'Eliminar','title'=>'Eliminar')), 'comision/delete?id='.$comision->getId(), array('method' => 'delete', 'confirm' => '¿Estas seguro?')) ?>
-                <?php echo link_to(image_tag('icons/hammer_screwdriver.png',array('alt'=>'Ver subcomisiones','title'=>'Ver Subcomisiones')), 'comision/show?id='.$comision->getId()) ?>
+                <?php echo link_to(image_tag('icons/hammer_screwdriver.png',array('alt'=>'Ver subcomisiones','title'=>'Ver Subcomisiones')), 'subcomision/ShowSubcomisionsByComision?id='.$comision->getId()) ?>
               </td>
             </tr>
           <?php $i++; ?>

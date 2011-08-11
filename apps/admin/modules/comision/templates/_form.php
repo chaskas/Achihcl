@@ -7,8 +7,8 @@
     <input type="hidden" name="sf_method" value="put" />
   <?php endif; ?>
 
-    <p>
-      <label><?php echo $form['nombre']->renderLabel(); ?></label>
+  <p>
+    <label><?php echo $form['nombre']->renderLabel(); ?></label>
     <?php echo $form['nombre']->render(array('class' => 'text-input large-input')); ?>
   </p>
   <p>
@@ -19,7 +19,7 @@
   <p>
     <a href="<?php echo url_for('comision/index') ?>">Volver a la lista</a>
     <?php if (!$form->getObject()->isNew()): ?>
-      &nbsp;<?php echo link_to('Eliminar', 'comision/delete?id=' . $form->getObject()->getId(), array('method' => 'delete', 'confirm' => '¿Est&aacute; seguro??')) ?>
+      &nbsp;<?php echo link_to('Eliminar', 'comision/delete?id=' . $form->getObject()->getId(), array('method' => 'delete', 'confirm' => '¿Est&aacute; seguro?')) ?>
     <?php endif; ?>
     <input type="submit" value="Guardar" class="button"/>
   </p>

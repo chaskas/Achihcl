@@ -12,4 +12,7 @@
  */
 class Comision extends BaseComision
 {
+  public function  __toString() {
+    return $this->getNombre();
+  }
 }

@@ -12,4 +12,7 @@
  */
 class Foro extends BaseForo
 {
+  public function  __toString() {
+    return $this->getNombre();
+  }
 }

@@ -359,6 +359,15 @@ ul.content-box-tabs li a.current {
   background: #f3f3f3;
 }
 
+.listados td {
+  padding: 10px;
+  line-height: 1.3em;
+}
+.listados th {
+  padding: 10px;
+  line-height: 1.3em;
+}
+
 /*#main-content table td,
 #main-content table th {
   padding: 10px;

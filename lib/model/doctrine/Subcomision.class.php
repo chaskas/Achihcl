@@ -12,4 +12,7 @@
  */
 class Subcomision extends BaseSubcomision
 {
+  public function  __toString() {
+    return $this->getNombre();
+  }
 }
