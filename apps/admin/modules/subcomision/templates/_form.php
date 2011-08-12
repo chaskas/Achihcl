@@ -24,9 +24,12 @@
   </p>
 
   <p>
-    <a href="<?php echo url_for('subcomision/ShowSubcomisionsByComision?id='.$form->getObject()->getComisionId()) ?>">Volver a la lista</a>
+    <?php if ($form->getObject()->isNew()): ?>
+      <a href="<?php echo url_for('subcomision/ShowSubcomisionsByComision?id='.$cid) ?>">Volver a la lista</a>
+    <?php endif; ?>
     <?php if (!$form->getObject()->isNew()): ?>
-      &nbsp;<?php echo link_to('Eliminar', 'subcomision/delete?id=' . $form->getObject()->getId(), array('method' => 'delete', 'confirm' => '¿Est&aacute; seguro?')) ?>
+      <a href="<?php echo url_for('subcomision/ShowSubcomisionsByComision?id='.$form->getObject()->getComisionId()) ?>">Volver a la lista</a>
+      &nbsp;<?php echo link_to('Eliminar', 'subcomision/delete?id=' . $form->getObject()->getId().'&cid='.$form->getObject()->getComisionId(), array('method' => 'delete', 'confirm' => '¿Est&aacute; seguro?')) ?>
     <?php endif; ?>
     <input type="submit" value="Guardar" class="button"/>
   </p>

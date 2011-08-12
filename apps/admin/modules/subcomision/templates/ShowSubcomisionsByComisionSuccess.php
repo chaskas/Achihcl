@@ -36,7 +36,7 @@
               <td>
                 <!-- Icons -->
                 <?php echo link_to(image_tag('icons/pencil.png',array('alt'=>'Editar','title'=>'Editar')), 'subcomision/edit?id='.$subcomision->getId()) ?>
-                <?php echo link_to(image_tag('icons/cross.png',array('alt'=>'Eliminar','title'=>'Eliminar')), 'subcomision/delete?id='.$subcomision->getId(), array('method' => 'delete', 'confirm' => '¿Estas seguro?')) ?>
+                <?php echo link_to(image_tag('icons/cross.png',array('alt'=>'Eliminar','title'=>'Eliminar')), 'subcomision/delete?id='.$subcomision->getId().'&cid='.$comision->getId(), array('method' => 'delete', 'confirm' => '¿Estas seguro?')) ?>
                 <?php echo link_to(image_tag('icons/hammer_screwdriver.png',array('alt'=>'Ver Foros','title'=>'Ver Foros')), 'subcomision/ShowSubcomisionsByComision?id='.$subcomision->getId()) ?>
               </td>
             </tr>

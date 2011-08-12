@@ -71,12 +71,13 @@ class subcomisionActions extends sfActions
 
   public function executeDelete(sfWebRequest $request)
   {
+    $this->cid = $request->getParameter('cid');
     $request->checkCSRFProtection();
 
     $this->forward404Unless($subcomision = Doctrine_Core::getTable('Subcomision')->find(array($request->getParameter('id'))), sprintf('Object subcomision does not exist (%s).', $request->getParameter('id')));
     $subcomision->delete();
 
-    $this->redirect('subcomision/index');
+    $this->redirect('subcomision/ShowSubcomisionsByComision?id='.$this->cid);
   }
 
   protected function processForm(sfWebRequest $request, sfForm $form)
