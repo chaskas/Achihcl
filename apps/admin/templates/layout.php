@@ -33,7 +33,7 @@
             <ul id="main-nav">  <!-- Accordion Menu -->
               
               <li>
-                <a href="<?php echo url_for('comision/index'); ?>" class="nav-top-item <?php if($sf_context->getModuleName()=='comision' || $sf_context->getModuleName()=='subcomision') echo "current"; ?> ">
+                <a href="<?php echo url_for('comision/index'); ?>" class="nav-top-item <?php if($sf_context->getModuleName()=='comision' || $sf_context->getModuleName()=='subcomision' || $sf_context->getModuleName()=='foro') echo "current"; ?> ">
                   Comisiones
                 </a>
                 <ul>

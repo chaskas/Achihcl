@@ -1,8 +1,14 @@
-<div class="content-box"><!-- Start Content Box -->
+<div class="content-box">
 
   <div class="content-box-header">
 
-    <h3 style="cursor: s-resize; ">Subcomisiones pertenecientes a <?php echo $comision->getNombre(); ?></h3>
+    <h3 style="cursor: s-resize; ">
+      <?php echo link_to('Comisiones','comision/index'); ?>
+      &nbsp;»&nbsp;
+      <?php echo link_to($comision->getNombre(),'subcomision/ShowSubcomisionsByComision?id='.$comision->getId()); ?>
+      &nbsp;»&nbsp;
+      Subcomisiones
+    </h3>
 
     <ul class="content-box-tabs">
       <li><a href="<?php echo url_for('subcomision/new?cid='.$comision->getId()) ?>" class="button">Agregar Subcomisi&oacute;n</a></li>
@@ -37,7 +43,7 @@
                 <!-- Icons -->
                 <?php echo link_to(image_tag('icons/pencil.png',array('alt'=>'Editar','title'=>'Editar')), 'subcomision/edit?id='.$subcomision->getId()) ?>
                 <?php echo link_to(image_tag('icons/cross.png',array('alt'=>'Eliminar','title'=>'Eliminar')), 'subcomision/delete?id='.$subcomision->getId().'&cid='.$comision->getId(), array('method' => 'delete', 'confirm' => '¿Estas seguro?')) ?>
-                <?php echo link_to(image_tag('icons/hammer_screwdriver.png',array('alt'=>'Ver Foros','title'=>'Ver Foros')), 'subcomision/ShowSubcomisionsByComision?id='.$subcomision->getId()) ?>
+                <?php echo link_to(image_tag('icons/hammer_screwdriver.png',array('alt'=>'Ver Foros','title'=>'Ver Foros')), 'foro/ShowForosBySubcomision?scid='.$subcomision->getId()) ?>
               </td>
             </tr>
           <?php $i++; ?>
@@ -49,5 +55,6 @@
     </div> <!-- End #tab1 -->
 
   </div> <!-- End .content-box-content -->
-
+  
 </div>
+<?php echo link_to('Volver a Listar Comisiones','comision/index'); ?>
