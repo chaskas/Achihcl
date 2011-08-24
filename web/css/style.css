@@ -526,9 +526,9 @@ form input[type="radio"] {
   background-position: 10px 11px !important;
   background-repeat: no-repeat !important;
   font-size: 13px;
-  width: 99.8%;
+  width: 20%;
+  z-index:999;
 }
-
 
 .attention {
   background: #fffbcc url('../images/icons/exclamation.png') 10px 11px no-repeat;

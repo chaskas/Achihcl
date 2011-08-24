@@ -13,54 +13,84 @@
 
     <p>
         <label style="float:left;width:350pt;padding-right: 15pt;">
-          Nombre:
+          Nombre: 
           <br/>
+          <?php echo $form['nombre']->renderError(); ?>
           <?php echo $form['nombre']->render(array('class' => 'text-input large-input')); ?>
         </label>
         <label style="float:left;width:200pt;padding-right: 15pt;">
-          Subcomisi&oacute;n
+          Subcomisi&oacute;n: 
           <br/>
+          <?php echo $form['subcomision_id']->renderError(); ?>
           <?php echo $form['subcomision_id']->render(array('class' => 'large-input')); ?>
         </label>
         <label style="float:left;width:20pt;padding-right: 20pt;">
-          Temas
+          Temas:
           <br/>
           <?php echo $form['ntopics']->render(array('class' => 'text-input large-input')); ?>
         </label>
 
         <label style="float:left;width:20pt;padding-right: 15pt;">
-          Posts
+          Posts:
           <br/>
           <?php echo $form['nposts']->render(array('class' => 'text-input large-input')); ?>
         </label>
     </p>
+    <div style="clear:both;"></div>
     <p>
       <label style="float:left;width:200pt;padding-right: 25pt;">
-        Creado el
+        Creado el:
+        <?php if($form['created_at']->hasError()): ?>
+        <br/>
+        <div class="notification error png_bg">
+          <a href="#" class="close">
+            <?php echo image_tag('icons/cross_grey_small.png',array('title'=>'Cerrar','alt'=>'close'));?>
+          </a>
+          <div>
+            <?php foreach ($form['created_at']->getError() as $error): ?>
+              <?php echo $error ?>
+            <?php endforeach; ?>
+          </div>
+        </div>
+        <?php endif; ?>
         <br/>
         <?php echo $form['created_at']->render(array('class' => 'large-input2')); ?>
       </label>
 
       <label style="float:left;width:200pt;padding-right: 25pt;">
-        Modificado el
+        Modificado el: 
         <br/>
         <?php echo $form['updated_at']->render(array('class' => 'large-input2')); ?>
       </label>
     </p>
     
+    
     <div style="clear:both;"></div>
-    <p>
-      <label><?php echo $form['created_by']->renderLabel(); ?></label>
-      <?php echo $form['created_by']->render(array('class' => 'small-input')); ?>
-    </p>
-    <p>
-      <label><?php echo $form['updated_by']->renderLabel(); ?></label>
-      <?php echo $form['updated_by']->render(array('class' => 'small-input')); ?>
-    </p>
+    
     <p>
       <label><?php echo $form['descripcion']->renderLabel(); ?></label>
       <?php echo $form['descripcion']->render(array('class' => 'text-input text-area', 'style' => 'width: 100% !important;')); ?>
     </p>
+    
+    <div style="clear:both;"></div>
+    
+    <p>
+      <label style="float:left;width:200pt;padding-right: 25pt;">
+        Creado por: 
+        <br/>
+        <?php echo $form['created_by']->renderError(); ?>
+        <?php echo $form['created_by']->render(array('class' => 'large-input')); ?>
+      </label>
+
+      <label style="float:left;width:200pt;padding-right: 25pt;">
+        Modificado por: 
+        <br/>
+        <?php echo $form['updated_by']->renderError(); ?>
+        <?php echo $form['updated_by']->render(array('class' => 'large-input')); ?>
+      </label>
+    </p>
+
+    <div style="clear:both;"></div>
 
     <p>
       <?php if ($form->getObject()->isNew()): ?>

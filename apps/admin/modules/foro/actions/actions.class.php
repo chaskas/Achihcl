@@ -45,7 +45,7 @@ class foroActions extends sfActions
   public function executeCreate(sfWebRequest $request)
   {
     $this->forward404Unless($request->isMethod(sfRequest::POST));
-
+    $this->scid = $request->getParameter('scid');
     $this->form = new ForoForm();
 
     $this->processForm($request, $this->form);

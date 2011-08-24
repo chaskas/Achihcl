@@ -1,5 +1,6 @@
 CREATE TABLE comision (id BIGINT AUTO_INCREMENT, nombre text NOT NULL, descripcion longtext NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE foro (id BIGINT AUTO_INCREMENT, nombre text NOT NULL, descripcion longtext NOT NULL, ntopics INT DEFAULT 0 NOT NULL, nposts INT DEFAULT 0 NOT NULL, subcomision_id BIGINT NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, created_by BIGINT, updated_by BIGINT, INDEX subcomision_id_idx (subcomision_id), INDEX created_by_idx (created_by), INDEX updated_by_idx (updated_by), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE noticia (id BIGINT AUTO_INCREMENT, titulo text NOT NULL, cuerpo longtext NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, created_by BIGINT, updated_by BIGINT, INDEX created_by_idx (created_by), INDEX updated_by_idx (updated_by), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE post (id BIGINT AUTO_INCREMENT, asunto text NOT NULL, cuerpo longtext NOT NULL, tema_id BIGINT NOT NULL, foro_id BIGINT NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, created_by BIGINT, updated_by BIGINT, INDEX tema_id_idx (tema_id), INDEX foro_id_idx (foro_id), INDEX created_by_idx (created_by), INDEX updated_by_idx (updated_by), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE posts (id BIGINT AUTO_INCREMENT, asunto text NOT NULL, cuerpo longtext NOT NULL, tema_id BIGINT NOT NULL, foro_id BIGINT NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, created_by BIGINT, updated_by BIGINT, INDEX tema_id_idx (tema_id), INDEX foro_id_idx (foro_id), INDEX created_by_idx (created_by), INDEX updated_by_idx (updated_by), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE subcomision (id BIGINT AUTO_INCREMENT, nombre text NOT NULL, descripcion longtext NOT NULL, comision_id BIGINT NOT NULL, INDEX comision_id_idx (comision_id), PRIMARY KEY(id)) ENGINE = INNODB;
@@ -15,6 +16,8 @@ CREATE TABLE sf_guard_user_permission (user_id BIGINT, permission_id BIGINT, cre
 ALTER TABLE foro ADD CONSTRAINT foro_updated_by_sf_guard_user_id FOREIGN KEY (updated_by) REFERENCES sf_guard_user(id) ON DELETE CASCADE;
 ALTER TABLE foro ADD CONSTRAINT foro_subcomision_id_subcomision_id FOREIGN KEY (subcomision_id) REFERENCES subcomision(id) ON DELETE CASCADE;
 ALTER TABLE foro ADD CONSTRAINT foro_created_by_sf_guard_user_id FOREIGN KEY (created_by) REFERENCES sf_guard_user(id) ON DELETE CASCADE;
+ALTER TABLE noticia ADD CONSTRAINT noticia_updated_by_sf_guard_user_id FOREIGN KEY (updated_by) REFERENCES sf_guard_user(id) ON DELETE CASCADE;
+ALTER TABLE noticia ADD CONSTRAINT noticia_created_by_sf_guard_user_id FOREIGN KEY (created_by) REFERENCES sf_guard_user(id) ON DELETE CASCADE;
 ALTER TABLE post ADD CONSTRAINT post_updated_by_sf_guard_user_id FOREIGN KEY (updated_by) REFERENCES sf_guard_user(id) ON DELETE CASCADE;
 ALTER TABLE post ADD CONSTRAINT post_tema_id_tema_id FOREIGN KEY (tema_id) REFERENCES tema(id) ON DELETE CASCADE;
 ALTER TABLE post ADD CONSTRAINT post_foro_id_foro_id FOREIGN KEY (foro_id) REFERENCES foro(id) ON DELETE CASCADE;

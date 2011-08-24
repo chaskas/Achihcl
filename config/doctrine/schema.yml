@@ -43,3 +43,9 @@ Post:
   relations:
     Tema:           { onDelete: CASCADE, local: tema_id, foreign: id, foreignAlias: Posts }
     Foro:           { onDelete: CASCADE, local: foro_id, foreign: id, foreignAlias: Posts }
+
+Noticia:
+  actAs:            { Timestampable: ~ ,Signable: ~ }
+  columns:
+    titulo:         { type: text, notnull: true }
+    cuerpo:         { type: longtext, notnull: true }
