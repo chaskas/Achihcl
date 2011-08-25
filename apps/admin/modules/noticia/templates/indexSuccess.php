@@ -19,7 +19,7 @@
       <table class="listados">
         <thead>
           <tr>
-            <th></th>
+            <th>Fecha</th>
             <th>T&iacute;tulo</th>
             <th>Cuerpo</th>
             <th>Opciones</th>
@@ -30,7 +30,7 @@
           <?php foreach ($noticias as $noticia): ?>
           <?php $i = 0; ?>
             <tr <?php if ($i % 2 != 0)echo "class='alt-row'"; ?>>
-              <td></td>
+              <td><?php echo tools::formatDate($noticia->getCreatedAt()) ?></td>
               <td><?php echo $noticia->getTitulo() ?></td>
               <td><?php echo tools::getResumeShort(strip_tags($noticia->getRawValue()->getCuerpo())) ?></td>
               <td>

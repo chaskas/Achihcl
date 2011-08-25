@@ -17,6 +17,10 @@ class staticActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
+    $this->noticias = Doctrine_Core::getTable('Noticia')
+      ->createQuery('a')
+      ->orderBy('a.created_at DESC')
+      ->execute();
   }
   public function executeContact(sfWebRequest $request)
   {

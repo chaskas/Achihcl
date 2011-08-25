@@ -9,7 +9,7 @@
 
   <p>
         <label>
-          Nombre:
+          T&iacute;tulo:
           <br/>
           <?php echo $form['titulo']->renderError(); ?>
           <?php echo $form['titulo']->render(array('class' => 'text-input large-input')); ?>
@@ -17,12 +17,20 @@
   </p>
   <p>
         <label>
-          Nombre:
+          Cuerpo:
           <br/>
           <?php echo $form['cuerpo']->renderError(); ?>
           <?php echo $form['cuerpo']->render(array('class' => 'text-input large-input')); ?>
         </label>
   </p>
+<!--  <p>
+        <label>
+          Fechas:
+          <br/>
+          <?php //echo $form['created_at']->renderError(); ?>
+          <?php //echo $form['created_at']->render(); ?>
+        </label>
+  </p>-->
 
   <p>
     &nbsp;<a href="<?php echo url_for('noticia/index') ?>">Volver a la lista</a>
