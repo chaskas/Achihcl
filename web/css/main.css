@@ -324,6 +324,13 @@ a.more {
   margin: 8px 0px 15px 0px;
   padding-left: 25px;
 }
+.details {
+  background: url(../images/bullet3.gif) no-repeat 0px 8px;
+  font-size: 1.2em;
+  display: block;
+  margin: 8px 0px 15px 0px;
+  padding-left: 25px;
+}
 #blog .post .details a {
   color: #131414;
 }
