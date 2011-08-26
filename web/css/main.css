@@ -13,8 +13,10 @@ body {
 }
 
 /* general elements */
+h1 a {text-decoration: none; color: #000000;}
+h2 a {text-decoration: none; color: #000000;}
 a { text-decoration: underline; color: #46710b; }
-a:hover { text-decoration: none; }
+a:hover { text-decoration: underline; }
 .floatleft { float: left; }
 .block { display: block; }
 .floatright { float: right; }
@@ -161,6 +163,13 @@ ul#navigation li.active a {
   padding: 5px 5px 5px 14px;
   color: #46710c;
 }
+a.more {
+  float: right;
+  display: block;
+  background: url(../images/bullet1.gif) 0px 12px no-repeat;
+  padding: 5px 5px 5px 14px;
+  color: #46710c;
+}
 #four-col .last {
   margin-right: 0px;
 }
@@ -299,6 +308,7 @@ ul#navigation li.active a {
 #blog .post {
   background: url(../images/blog_div.gif) no-repeat;
   padding: 30px 0px;
+  margin-top: 20px;
 }
 #blog .post h2 {
   font: 2.1em Georgia;
