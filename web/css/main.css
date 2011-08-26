@@ -169,6 +169,7 @@ a.more {
   background: url(../images/bullet1.gif) 0px 12px no-repeat;
   padding: 5px 5px 5px 14px;
   color: #46710c;
+  margin-bottom: 20px;
 }
 #four-col .last {
   margin-right: 0px;
