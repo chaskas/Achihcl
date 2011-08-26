@@ -165,7 +165,7 @@ ul#navigation li.active a {
 }
 a.more {
   float: right;
-  display: block;
+  display: inline-block;
   background: url(../images/bullet1.gif) 0px 12px no-repeat;
   padding: 5px 5px 5px 14px;
   color: #46710c;
@@ -308,8 +308,6 @@ a.more {
 #blog .post {
   background: url(../images/blog_div.gif) no-repeat;
   padding: 30px 0px;
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 #blog .post h2 {
   font: 2.1em Georgia;
