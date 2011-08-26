@@ -7,7 +7,7 @@
       <span class="details">Publicado el <?php echo tools::formatDate($noticia->getCreatedAt()); ?> &nbsp; | &nbsp; por <?php echo $noticia->getCreator(); ?></span>
       <p class="intro"><?php echo tools::getResume($noticia->getRawValue()->getCuerpo()); ?></p>
       <a class="more" href="<?php echo url_for('noticia/show?id='.$noticia->getId()); ?>">Leer m&aacute;s</a>
-      <br/>
+      <br/><br/>
       <div id="blog">
     <?php $nnews++; ?>
     <?php else : ?>
