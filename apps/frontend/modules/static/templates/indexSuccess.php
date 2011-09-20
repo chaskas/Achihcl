@@ -11,6 +11,16 @@
   <div id="slider">
     <ul>
       <li>
+        <img src="images/slide-tejo.jpg" alt="" />
+        <div class="info">
+          <div>
+            <h1>II Jornadas de Ingeniería Hospitalaria</h1>
+            <p>La Asociación Chilena de Ingeniería Hospitalaria promueve e invita a participar de las "II Jornadas de Ingeniería Hospitalaria" a efectuarse los días 28 y 29 de septiembre en el Hotel Diego de Almagro de Puerto Montt.</p>
+            <a href="<?php echo url_for('noticia/show?id=7'); ?>" class="more">Leer m&aacute;s</a>
+          </div>
+        </div>
+      </li>
+      <li>
         <img src="images/slide1.jpg" alt="" />
         <div class="info">
           <div>

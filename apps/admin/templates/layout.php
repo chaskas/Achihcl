@@ -31,16 +31,6 @@
             <!-- END-Sidebar Profile links -->
 
             <ul id="main-nav">  <!-- Accordion Menu -->
-              
-              <li>
-                <a href="<?php echo url_for('comision/index'); ?>" class="nav-top-item <?php if($sf_context->getModuleName()=='comision' || $sf_context->getModuleName()=='subcomision' || $sf_context->getModuleName()=='foro') echo "current"; ?> ">
-                  Comisiones
-                </a>
-                <ul>
-                  <li><a <?php if($sf_context->getActionName()=='new' && $sf_context->getModuleName()=='comision') echo "class='current'"; ?> href="<?php echo url_for('comision/new'); ?>">Nueva comision</a></li>
-                  <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='comision') echo "class='current'"; ?> href="<?php echo url_for('comision/index'); ?>">Listar comisiones</a></li>
-                </ul>
-              </li>
 
               <li>
                 <a href="<?php echo url_for('noticia/index');?>" class="nav-top-item <?php if($sf_context->getModuleName()=='noticia') echo "current"; ?> ">
