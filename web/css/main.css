@@ -61,6 +61,11 @@ ul#navigation li.active a {
 }
 
 /* Banner */
+#banner-wrapper {
+  height: 320px;
+  width: 940px;
+  overflow: hidden;
+}
 #banner {
   margin-bottom: 10px;
   height: 320px;

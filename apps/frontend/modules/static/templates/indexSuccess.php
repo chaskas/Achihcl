@@ -6,6 +6,7 @@
     });		
   });	
 </script>
+<div id="banner-wrapper">
 <div id="banner">
   <!-- Content slider -->
   <div id="slider">
@@ -124,7 +125,7 @@
     </ul>
   </div>
 </div>
-
+</div>
 <div id="two-col" class="page">
   <div id="left">
     <div id="blog">
