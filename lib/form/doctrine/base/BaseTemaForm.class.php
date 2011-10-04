@@ -16,7 +16,7 @@ abstract class BaseTemaForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'            => new sfWidgetFormInputHidden(),
-      'first_post_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Post'), 'add_empty' => false)),
+      'first_post_id' => new sfWidgetFormInputText(),
       'foro_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Foro'), 'add_empty' => false)),
       'created_at'    => new sfWidgetFormDateTime(),
       'updated_at'    => new sfWidgetFormDateTime(),
@@ -26,7 +26,7 @@ abstract class BaseTemaForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'            => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'first_post_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Post'))),
+      'first_post_id' => new sfValidatorInteger(),
       'foro_id'       => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Foro'))),
       'created_at'    => new sfValidatorDateTime(),
       'updated_at'    => new sfValidatorDateTime(),

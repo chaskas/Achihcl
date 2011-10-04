@@ -13,7 +13,7 @@ abstract class BaseTemaFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'first_post_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Post'), 'add_empty' => true)),
+      'first_post_id' => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'foro_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Foro'), 'add_empty' => true)),
       'created_at'    => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'updated_at'    => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
@@ -22,7 +22,7 @@ abstract class BaseTemaFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
-      'first_post_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Post'), 'column' => 'id')),
+      'first_post_id' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'foro_id'       => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Foro'), 'column' => 'id')),
       'created_at'    => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'updated_at'    => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
@@ -48,7 +48,7 @@ abstract class BaseTemaFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'            => 'Number',
-      'first_post_id' => 'ForeignKey',
+      'first_post_id' => 'Number',
       'foro_id'       => 'ForeignKey',
       'created_at'    => 'Date',
       'updated_at'    => 'Date',

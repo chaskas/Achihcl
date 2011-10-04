@@ -8,18 +8,15 @@
  * @property integer $first_post_id
  * @property integer $foro_id
  * @property Foro $Foro
- * @property Post $Post
  * @property Doctrine_Collection $Posts
  * 
  * @method integer             getFirstPostId()   Returns the current record's "first_post_id" value
  * @method integer             getForoId()        Returns the current record's "foro_id" value
  * @method Foro                getForo()          Returns the current record's "Foro" value
- * @method Post                getPost()          Returns the current record's "Post" value
  * @method Doctrine_Collection getPosts()         Returns the current record's "Posts" collection
  * @method Tema                setFirstPostId()   Sets the current record's "first_post_id" value
  * @method Tema                setForoId()        Sets the current record's "foro_id" value
  * @method Tema                setForo()          Sets the current record's "Foro" value
- * @method Tema                setPost()          Sets the current record's "Post" value
  * @method Tema                setPosts()         Sets the current record's "Posts" collection
  * 
  * @package    achihcl
@@ -47,11 +44,6 @@ abstract class BaseTema extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('Foro', array(
              'local' => 'foro_id',
-             'foreign' => 'id',
-             'onDelete' => 'CASCADE'));
-
-        $this->hasOne('Post', array(
-             'local' => 'first_post_id',
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
 

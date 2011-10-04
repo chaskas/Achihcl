@@ -27,4 +27,5 @@
         <span class="copyright">Copyright 2011 <a href="http://www.webdevel.cl/">webdevel.cl</a>.  All rights reserved.</span>
       </div>
     </div>
+  </body>
 </html>

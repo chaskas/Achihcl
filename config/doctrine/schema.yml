@@ -31,7 +31,6 @@ Tema:
     foro_id:        { type: integer, notnull: true }
   relations:
     Foro:           { onDelete: CASCADE, local: foro_id, foreign: id, foreignAlias: Temas }
-    Post:           { onDelete: CASCADE, local: first_post_id, foreign: id, foreignType: one }
 
 Post:
   actAs:            { Timestampable: ~ ,Signable: ~ }

@@ -7,9 +7,18 @@
  * 
  * @package    achihcl
  * @subpackage model
- * @author     Your name here
+ * @author     Rodrigo Campos H.
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 class Post extends BasePost
 {
+  public function save(Doctrine_Connection $conn = null)
+  {
+    if ($this->isNew() && $this->tema_id == NULL)
+    {
+      echo "hola";
+    }
+
+    return parent::save($conn);
+  }
 }

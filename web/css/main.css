@@ -85,9 +85,12 @@ ul#navigation li.active a {
   font: 1.9em Georgia;
   margin-bottom: 10px;
 }
+.p2 {
+  line-height: 1.8em !important;
+}
 #banner .info div p {
   font: 1.0em Georgia;
-  line-height: 1.8em;
+  line-height: 1.0em;
   margin-bottom: 10px;
 }
 #banner .info a.more {
@@ -490,7 +493,9 @@ ul.catlist li a {
   width: 226px;
 }
 
-#slider { }	
+#slider {
+  overflow: hidden;
+}	
 #slider ul, #slider li {
   margin: 0;
   padding: 0;
