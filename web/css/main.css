@@ -65,6 +65,7 @@ ul#navigation li.active a {
   margin-bottom: 10px;
   height: 320px;
   width: 940px;
+  overflow: hidden;
 }
 #banner img {
   display: block;
