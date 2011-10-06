@@ -26,6 +26,13 @@ class staticActions extends sfActions
   {
     $this->form = new ContactForm();
   }
+  public function executeLinks(sfWebRequest $request)
+  {
+    $this->links = Doctrine_Core::getTable('Link')
+      ->createQuery('a')
+      ->orderBy('a.titulo ASC')
+      ->execute();
+  }
   public function executeSendmail(sfWebRequest $request)
   {
     $this->forward404Unless($request->isMethod('POST'));

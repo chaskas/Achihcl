@@ -465,6 +465,8 @@ ul.catlist li a {
 }
 .news div span {
   font-size: 0.9em;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 /* -------------------------------------- */

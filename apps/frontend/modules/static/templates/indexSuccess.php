@@ -150,7 +150,7 @@
         <!--        <li><a href="#">Membres&iacute;a</a></li>-->
         <!--        <li><a href="#">Banco de Documentos</a></li>-->
         <!--        <li><a href="#">Bolsa de Trabajo</a></li>-->
-        <!--        <li><a href="#">Links</a></li>-->
+        <li><a href="<?php echo url_for('static/links'); ?>">Links</a></li>
         <li><a href="<?php echo url_for('static/contact'); ?>">Contacto</a></li>
       </ul>
     </div>

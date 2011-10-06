@@ -16,6 +16,8 @@
         <a href="<?php echo url_for('static/index'); ?>"><?php echo image_tag('logo-med.png','alt=ACHIH class=floatleft'); ?></a>
         <ul id="navigation">
           <li <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='static') echo "class='active'"; ?>><a href="<?php echo url_for('static/index'); ?>">Inicio</a></li>
+          <li><a href="http://comision.achih.cl" target="_blank">Comisiones</a></li>
+          <li <?php if($sf_context->getActionName()=='links' && $sf_context->getModuleName()=='static') echo "class='active'"; ?>><a href="<?php echo url_for('links/index'); ?>">Links</a></li>
           <li <?php if($sf_context->getActionName()=='contact' && $sf_context->getModuleName()=='static') echo "class='active'"; ?>><a href="<?php echo url_for('static/contact'); ?>">Contacto</a></li>
         </ul>
       </div>

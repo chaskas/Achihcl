@@ -78,12 +78,12 @@
                 </ul>
               </li>
               <li>
-                <a href="<?php echo url_for('comision/index');?>" class="nav-top-item <?php if($sf_context->getModuleName()=='comisaaion') echo "current"; ?> ">
+                <a href="<?php echo url_for('links/index');?>" class="nav-top-item <?php if($sf_context->getModuleName()=='links') echo "current"; ?> ">
                   Links
                 </a>
                 <ul>
-                  <li><a <?php if($sf_context->getActionName()=='newasd' && $sf_context->getModuleName()=='comisaaion') echo "class='current'"; ?> href="<?php echo url_for('comision/new'); ?>">Nueva comision</a></li>
-                  <li><a <?php if($sf_context->getActionName()=='indeasdx' && $sf_context->getModuleName()=='comiaasion') echo "class='current'"; ?> href="<?php echo url_for('comision/index'); ?>">Listar comisiones</a></li>
+                  <li><a <?php if($sf_context->getActionName()=='new' && $sf_context->getModuleName()=='links') echo "class='current'"; ?> href="<?php echo url_for('links/new'); ?>">Nuevo Link</a></li>
+                  <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='links') echo "class='current'"; ?> href="<?php echo url_for('links/index'); ?>">Listar Links</a></li>
                 </ul>
               </li>
 
