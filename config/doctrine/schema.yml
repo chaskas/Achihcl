@@ -18,3 +18,14 @@ Doc:
     nombre:         { type: text, notnull: true }
     descripcion:    { type: text, notnull: false }
     archivo:        { type: text, notnull: true }
+    
+Evento:
+  columns:
+    nombre:         { type: text, notnull: true }
+    descripcion:    { type: text, notnull: true }
+    ubicacion:      { type: text, notnull: true }
+    inicio_at:      { type: timestamp, notnull: true }
+    fin_at:         { type: timestamp, notnull: false }
+    valor:          { type: text, notnull: false }
+    afiche:         { type: text, notnull: false }
+      
