@@ -2,4 +2,4 @@ cache/*
 log/*
 web/uploads/*
 nbproject/*
-config/doctrine/schema.yml
+config/databases.yml
