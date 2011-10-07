@@ -455,7 +455,7 @@ ul.catlist li a {
 }
 .news div {
   background: url(../images/news_div.gif) no-repeat bottom left;
-  padding: 13px 15px 27px 18px;
+  padding: 13px 15px 13px 18px;
 }
 .news div a.big {
   color: #000000;

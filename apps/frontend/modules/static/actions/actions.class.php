@@ -33,6 +33,13 @@ class staticActions extends sfActions
       ->orderBy('a.titulo ASC')
       ->execute();
   }
+  public function executeDocs(sfWebRequest $request)
+  {
+    $this->docs = Doctrine_Core::getTable('Doc')
+      ->createQuery('a')
+      ->orderBy('a.created_at DESC')
+      ->execute();
+  }
   public function executeSendmail(sfWebRequest $request)
   {
     $this->forward404Unless($request->isMethod('POST'));

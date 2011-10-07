@@ -12,6 +12,7 @@ class LinkForm extends BaseLinkForm
 {
   public function configure()
   {
+    $this->validatorSchema['titulo'] = new sfValidatorString();
     $this->validatorSchema['link'] = new sfValidatorURL();
   }
 }

@@ -9,5 +9,12 @@ Noticia:
 Link:
   columns:
     titulo:         { type: text, notnull: true }
-    descripcion:           { type: text, notnull: false }
+    descripcion:    { type: text, notnull: false }
     link:           { type: text, notnull: true }
+
+Doc:
+  actAs:            { Timestampable: ~ }
+  columns:
+    nombre:         { type: text, notnull: true }
+    descripcion:    { type: text, notnull: false }
+    archivo:        { type: text, notnull: true }

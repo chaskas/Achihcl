@@ -9,6 +9,9 @@ links:
   url: /links
   param: { module: static, action: links }
   
+docs:
+  url: /docs
+  param: { module: static, action: docs }
 
 # default rules
 homepage:

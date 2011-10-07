@@ -21,6 +21,7 @@
           <tr>
             <th>T&iacute;tulo</th>
             <th>Enlace</th>
+            <th>Opciones</th>
           </tr>
         </thead>
 
@@ -29,7 +30,7 @@
           <?php $i = 0; ?>
             <tr <?php if ($i % 2 != 0)echo "class='alt-row'"; ?>>
               <td><?php echo $link->getTitulo() ?></td>
-              <td><?php echo $link->getLink() ?></td>
+              <td><a href="<?php echo $link->getLink() ?>" target="_blank"><?php echo $link->getLink() ?></a></td>
               <td>
                 <!-- Icons -->
                 <?php echo link_to(image_tag('icons/pencil.png',array('alt'=>'Editar','title'=>'Editar')), 'links/edit?id='.$link->getId()) ?>

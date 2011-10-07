@@ -12,7 +12,7 @@
   <div id="slider">
     <ul>
       <li>
-        <img src="images/slide-tejo.jpg" alt="" />
+        <?php echo image_tag('slide-tejo.jpg'); ?>
         <div class="info">
           <div>
             <h1>II Jornadas de Ingeniería Hospitalaria</h1>
@@ -22,7 +22,7 @@
         </div>
       </li>
       <li>
-        <img src="images/slide1.jpg" alt="" />
+        <?php echo image_tag('slide1.jpg'); ?>
         <div class="info">
           <div>
             <h1>Reunión <br/>ACHIH - Minsal</h1>
@@ -33,7 +33,7 @@
         </div>
       </li>
       <li>
-        <img src="images/slide8.jpg" alt="" />
+        <?php echo image_tag('slide8.jpg'); ?>
         <div class="info">
           <div>
             <h1>Directiva ACHIH</h1>
@@ -45,7 +45,7 @@
         </div>
       </li>
       <li>
-        <img src="images/slide6.jpg" alt="" />
+        <?php echo image_tag('slide6.jpg'); ?>
         <div class="info">
           <div>
             <h1>Comisi&oacute;n de Capacitaci&oacute;n</h1>
@@ -58,7 +58,7 @@
         </div>
       </li>
       <li>
-        <img src="images/slide11.jpg" alt="" />
+        <?php echo image_tag('slide11.jpg'); ?>
         <div class="info">
           <div>
             <h1>Comisi&oacute;n de Climatizaci&oacute;n</h1>
@@ -70,7 +70,7 @@
         </div>
       </li>
       <li>
-        <img src="images/slide5.jpg" alt="" />
+        <?php echo image_tag('slide5.jpg'); ?>
         <div class="info">
           <div>
             <h1>Comisi&oacute;n de Electricidad</h1>
@@ -82,7 +82,7 @@
         </div>
       </li>
       <li>
-        <img src="images/slide13.jpg" alt="" />
+        <?php echo image_tag('slide13.jpg'); ?>
         <div class="info">
           <div>
             <h1>Comisi&oacute;n de Agua Potable</h1>
@@ -93,7 +93,7 @@
         </div>
       </li>
       <li>
-        <img src="images/slide10.jpg" alt="" />
+        <?php echo image_tag('slide10.jpg'); ?>
         <div class="info">
           <div>
             <h1>Comisi&oacute;n Infraestructura</h1>
@@ -111,7 +111,7 @@
         </div>
       </li>
       <li>
-        <img src="images/slide9.jpg" alt="" />
+        <?php echo image_tag('slide9.jpg'); ?>
         <div class="info">
           <div>
             <h1>Comisi&oacute;n T&eacute;cnica</h1>

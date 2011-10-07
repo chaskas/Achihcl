@@ -1,3 +1,5 @@
+CREATE TABLE doc (id BIGINT AUTO_INCREMENT, nombre text NOT NULL, descripcion text, archivo text NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE docs (id BIGINT AUTO_INCREMENT, nombre text NOT NULL, descripcion text, archivo text NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE link (id BIGINT AUTO_INCREMENT, titulo text NOT NULL, descripcion text, link text NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE noticia (id BIGINT AUTO_INCREMENT, titulo text NOT NULL, cuerpo longtext NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, created_by BIGINT, updated_by BIGINT, INDEX created_by_idx (created_by), INDEX updated_by_idx (updated_by), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE sf_guard_forgot_password (id BIGINT AUTO_INCREMENT, user_id BIGINT NOT NULL, unique_key VARCHAR(255), expires_at DATETIME NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX user_id_idx (user_id), PRIMARY KEY(id)) ENGINE = INNODB;
