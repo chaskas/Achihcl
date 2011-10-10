@@ -74,7 +74,7 @@
                 </a>
                 <ul>
                   <li><a <?php if($sf_context->getActionName()=='new' && $sf_context->getModuleName()=='membresia') echo "class='current'"; ?> href="<?php echo url_for('membresia/new'); ?>">Nuevo miembro</a></li>
-                  <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='membresia') echo "class='current'"; ?> href="<?php echo url_for('membresia/index'); ?>">Ver inactivos</a></li>
+                  <li><a <?php if($sf_context->getActionName()=='aprobarMiembros' && $sf_context->getModuleName()=='membresia') echo "class='current'"; ?> href="<?php echo url_for('membresia/aprobarMiembros'); ?>">Ver postulantes</a></li>
                   <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='membresia') echo "class='current'"; ?> href="<?php echo url_for('membresia/index'); ?>">Listar miembros</a></li>
                 </ul>
               </li>

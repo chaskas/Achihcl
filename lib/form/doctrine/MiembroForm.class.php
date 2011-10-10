@@ -12,7 +12,8 @@ class MiembroForm extends BaseMiembroForm
 {
   public function configure()
   {
-    $this->widgetSchema['nacimiento_at']= new sfWidgetFormJQueryDate(array('config' => '{showOn: "button",buttonImage: "/images/icons/calendar.png",buttonImageOnly: true,changeMonth: true,changeYear: true}','culture'=>'es'));
+    $years = range(date('Y') - 100, date('Y'));
+    $this->widgetSchema['nacimiento_at']= new sfWidgetFormJQueryDate(array('config' => '{showOn: "button",buttonImage: "/images/icons/calendar.png",buttonImageOnly: true,changeMonth: true,changeYear: true,yearRange: "-100:+0"}','culture'=>'es','date_widget' => new sfWidgetFormDate(array('years' => array_combine($years, $years)))));
     $this->widgetSchema['nacimiento_at']->getOption('date_widget')->setOption('format', '%day%%month%%year%');
     
     $this->widgetSchema['pais'] = new sfWidgetFormI18nChoiceCountry(array('culture'   => 'es_CL'));
@@ -42,7 +43,30 @@ class MiembroForm extends BaseMiembroForm
     $this->validatorSchema['fax_empresa']         = new sfValidatorString(array('required' => false));
     $this->validatorSchema['email_empresa']       = new sfValidatorEmail(array('required' => false));
     $this->validatorSchema['isAprobado']          = new sfValidatorBoolean();
-    
+
+    $this->widgetSchema->setLabels(array(
+        'nombre'            => 'Nombre',
+        'apellido'          => 'Apellido',
+        'nacimiento_at'     => 'Fecha de Nacimiento',
+        'profesion'         => 'Profesion',
+        'institucion'       => 'Institución',
+        'direccion'         => 'Dirección',
+        'comuna'            => 'Comuna',
+        'ciudad'            => 'Ciudad',
+        'pais'              => 'País',
+        'telefono'          => 'Teléfono',
+        'fax'               => 'Fax',
+        'email'             => 'Email',
+        'empresa'           => 'Empresa o Institución',
+        'direccion_empresa' => 'Dirección',
+        'comuna_empresa'    => 'Comuna',
+        'ciudad_empresa'    => 'Ciudad',
+        'pais_empresa'      => 'País',
+        'telefono_empresa'  => 'Teléfono',
+        'fax_empresa'       => 'Fax',
+        'email_empresa'     => 'Email',
+    ));
+
     unset(
       $this['isAprobado']
     );

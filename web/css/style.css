@@ -821,3 +821,4 @@ table {
   width: 100%;
 }
 .logo {padding: 20px 70px;}
+.title {font: 2.0em Georgia;border-bottom: 2px solid #CCCCCC;}

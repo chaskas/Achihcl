@@ -14,13 +14,8 @@ class membresiaActions extends sfActions
   {
     $this->miembros = Doctrine_Core::getTable('Miembro')
       ->createQuery('a')
+      ->orderBy('a.apellido DESC')
       ->execute();
-  }
-
-  public function executeShow(sfWebRequest $request)
-  {
-    $this->miembro = Doctrine_Core::getTable('Miembro')->find(array($request->getParameter('id')));
-    $this->forward404Unless($this->miembro);
   }
 
   public function executeNew(sfWebRequest $request)
@@ -75,5 +70,14 @@ class membresiaActions extends sfActions
 
       $this->redirect('membresia/edit?id='.$miembro->getId());
     }
+  }
+  public function executeAprobarMiembros(sfWebRequest $request)
+  {
+    $this->miembros = Doctrine_Core::getTable('Miembro')
+      ->createQuery('a')
+      ->select('a.nombre','a.apellido','a.empresa','a.email','a.telefono')
+      ->where('a.isAprobado = 0')
+      ->orderBy('a.apellido DESC')
+      ->execute();
   }
 }

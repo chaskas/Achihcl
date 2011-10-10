@@ -12,4 +12,8 @@
  */
 class Miembro extends BaseMiembro
 {
+  public function getNombreCompleto()
+  {
+    return $this->getNombre() . " " . $this->getApellido();
+  }
 }
