@@ -13,11 +13,18 @@ docs:
   url: /docs
   param: { module: static, action: docs }
 
+eventos:
+  url: /eventos
+  param: { module: static, action: eventos }
+
 # default rules
 homepage:
   url:   /
   param: { module: static, action: index }
 
+sendmail:
+  url: /sendmail
+  param: { module: static, action: sendmail }
 # generic rules
 # please, remove them by adding more specific rules
 default_index:

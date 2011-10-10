@@ -22,6 +22,13 @@ class staticActions extends sfActions
       ->orderBy('a.created_at DESC')
       ->execute();
   }
+  public function executeEventos(sfWebRequest $request)
+  {
+    $this->eventos = Doctrine_Core::getTable('Evento')
+      ->createQuery('a')
+      ->orderBy('a.inicio_at DESC')
+      ->execute();
+  }
   public function executeContact(sfWebRequest $request)
   {
     $this->form = new ContactForm();

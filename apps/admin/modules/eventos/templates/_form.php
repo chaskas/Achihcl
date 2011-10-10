@@ -50,7 +50,7 @@
         <label>
           Afiche:
           <br/>
-          <?php echo $form['afiche']->render(array('class' => 'text-input large-input')); ?>
+          <?php echo $form['afiche']->render(); ?>
         </label>
   </p>
   <div style="float:right;"><span style="color:#EE0000;">(*)</span> Campo Obligatorio</div>

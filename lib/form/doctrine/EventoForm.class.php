@@ -18,7 +18,7 @@ class EventoForm extends BaseEventoForm
     $this->widgetSchema['fin_at']->getOption('date_widget')->setOption('format', '%day%%month%%year%');
     
     $this->widgetSchema['descripcion']= new sfWidgetFormTextareaTinyMCE(array('theme'=>'advanced', 'height'=> 200,'config' =>
-        'theme_advanced_buttons1 : "mybutton,bold,italic,underline,separator,strikethrough,justifyleft,justifycenter,justifyright, justifyfull,bullist,numlist,undo,redo,link,unlink,fontselect,fontsizeselect,forecolor,blockquote,image,code",
+        'theme_advanced_buttons1 : "mybutton,bold,italic,underline,separator,strikethrough,justifyleft,justifycenter,justifyright, justifyfull,bullist,numlist,undo,redo,link,unlink,fontselect,fontsizeselect,forecolor,blockquote",
          theme_advanced_buttons2 : "",
          theme_advanced_buttons3 : "",
          theme_advanced_resizing : true,
@@ -27,19 +27,19 @@ class EventoForm extends BaseEventoForm
     
     $this->widgetSchema['afiche'] = new sfWidgetFormInputFileEditable(array(
                 'label' => 'Afiche',
-                'file_src' => '/uploads/afiches/' . $this->getObject()->getAfiche(),
+                'file_src' => '/uploads/afiches/s_' . $this->getObject()->getAfiche(),
                 'is_image' => true,
                 'edit_mode' => !$this->isNew(),
                 'with_delete' => true,
                 'delete_label' => 'Borrar',
-                'template' => '<div align="center">%input%</br>%delete% %delete_label%</div>',
+                'template' => '%input%<br/><br/>%file%<br/><br/>%delete% %delete_label%',
             ));
 
     $this->validatorSchema['afiche'] = new sfValidatorFile(array(
-                
                 'path' => sfConfig::get('sf_upload_dir') . '/afiches',
                 'required' => false,
-                'validated_file_class' => 'sfValidatedFileOriginalName'
+                'mime_types' => 'web_images',
+                'validated_file_class' => 'sfResizedFile'
             ));
 
     $this->validatorSchema['afiche_delete'] = new sfValidatorBoolean();
