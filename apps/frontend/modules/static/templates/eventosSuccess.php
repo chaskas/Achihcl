@@ -12,7 +12,7 @@
             </span>
             <?php echo $evento->getRawValue()->getDescripcion(); ?>
             <div style="clear: both"></div>
-            <img src="<?php echo "http://".$_SERVER['HTTP_HOST']."/uploads/afiches/s_".$evento->getAfiche(); ?>" alt="<?php echo $evento->getNombre(); ?>">
+            <?php if($evento->getAfiche() != NULL) echo image_tag('http://'.$_SERVER['HTTP_HOST'].'/uploads/afiches/s_'.$evento->getAfiche(),'alt='.$evento->getNombre()); ?>
           </div>
           <div style="clear: both;"></div>
       <?php endforeach; ?>

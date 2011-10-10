@@ -69,12 +69,13 @@
                 </ul>
               </li>
               <li>
-                <a href="<?php echo url_for('comision/index');?>" class="nav-top-item <?php if($sf_context->getModuleName()=='comisaaion') echo "current"; ?> ">
+                <a href="<?php echo url_for('membresia/index');?>" class="nav-top-item <?php if($sf_context->getModuleName()=='membresia') echo "current"; ?> ">
                   Membres&iacute;a
                 </a>
                 <ul>
-                  <li><a <?php if($sf_context->getActionName()=='newasd' && $sf_context->getModuleName()=='comisaaion') echo "class='current'"; ?> href="<?php echo url_for('comision/new'); ?>">Nueva comision</a></li>
-                  <li><a <?php if($sf_context->getActionName()=='indeasdx' && $sf_context->getModuleName()=='comiaasion') echo "class='current'"; ?> href="<?php echo url_for('comision/index'); ?>">Listar comisiones</a></li>
+                  <li><a <?php if($sf_context->getActionName()=='new' && $sf_context->getModuleName()=='membresia') echo "class='current'"; ?> href="<?php echo url_for('membresia/new'); ?>">Nuevo miembro</a></li>
+                  <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='membresia') echo "class='current'"; ?> href="<?php echo url_for('membresia/index'); ?>">Ver inactivos</a></li>
+                  <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='membresia') echo "class='current'"; ?> href="<?php echo url_for('membresia/index'); ?>">Listar miembros</a></li>
                 </ul>
               </li>
               <li>

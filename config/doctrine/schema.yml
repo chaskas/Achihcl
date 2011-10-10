@@ -28,4 +28,30 @@ Evento:
     fin_at:         { type: timestamp, notnull: false }
     valor:          { type: text, notnull: false }
     afiche:         { type: text, notnull: false }
-      
+
+Miembro:
+  columns:
+    nombre:             { type: text, notnull: true }
+    apellido:           { type: text, notnull: true }
+    nacimiento_at:      { type: timestamp, notnull: false }
+    rut:                { type: text, notnull: true }
+    nacionalidad:       { type: text, notnull: false }
+    profesion:          { type: text, notnull: false }
+    institucion:        { type: text, notnull: false }
+    direccion:          { type: text, notnull: false }
+    comuna:             { type: text, notnull: false }
+    ciudad:             { type: text, notnull: false }
+    pais:               { type: text, notnull: false }
+    telefono:           { type: text, notnull: false }
+    fax:                { type: text, notnull: false }
+    email:              { type: text, notnull: true }
+    empresa:            { type: text, notnull: false }
+    cargo:              { type: text, notnull: false }
+    direccion_empresa:  { type: text, notnull: false }
+    comuna_empresa:     { type: text, notnull: false }
+    ciudad_empresa:     { type: text, notnull: false }
+    pais_empresa:       { type: text, notnull: false }
+    telefono_empresa:   { type: text, notnull: false }
+    fax_empresa:        { type: text, notnull: false }
+    email_empresa:      { type: text, notnull: false }
+    isAprobado:         { type: boolean, notnull: true, default: '0' }
