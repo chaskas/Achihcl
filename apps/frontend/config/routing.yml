@@ -25,6 +25,11 @@ homepage:
 sendmail:
   url: /sendmail
   param: { module: static, action: sendmail }
+
+membresia:
+  url: /membresia
+  param: { module: membresia, action: new }
+  
 # generic rules
 # please, remove them by adding more specific rules
 default_index:

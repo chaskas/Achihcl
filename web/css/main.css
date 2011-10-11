@@ -560,9 +560,7 @@ ul.catlist li a {
   font-size: 1.2em;
   width: 90px;
   display: inline-block;
-  text-align: right;
-  margin-right: 15px;
-  margin-bottom: 15px;
+  text-align: left;
 }
 
 /* The regular inputs */
@@ -571,6 +569,18 @@ ul.catlist li a {
   padding: 5px 7px;
   margin-bottom: 15px;
   width: 200px;
+}
+#form .input-large {
+  border: 1px solid #e4e2d2;
+  padding: 5px 7px;
+  margin-bottom: 15px;
+  width: 97%;
+}
+#form .input-large2 {
+  border: 1px solid #e4e2d2;
+  padding: 5px 7px;
+  margin-bottom: 15px;
+  width: 25%;
 }
 
 /* Selection list */
@@ -607,4 +617,8 @@ ul.catlist li a {
 .contact-form-input-area {
   width: 500px;
   height: 150px;
+}
+.title {
+  font: 2.0em Georgia;
+  border-bottom: 2px solid #CCC;
 }

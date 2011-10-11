@@ -148,7 +148,7 @@
           <li><a href="<?php echo url_for('static/index'); ?>">Inicio</a></li>
         <li><a href="http://comision.achih.cl">Comisiones</a></li>
         <li><a href="<?php echo url_for('static/eventos'); ?>">Eventos</a></li>
-        <!--        <li><a href="#">Membres&iacute;a</a></li>-->
+        <li><a href="<?php echo url_for('membresia/new'); ?>">Membres&iacute;a</a></li>
         <li><a href="<?php echo url_for('static/docs'); ?>">Banco de Documentos</a></li>
         <!--        <li><a href="#">Bolsa de Trabajo</a></li>-->
         <li><a href="<?php echo url_for('static/links'); ?>">Links</a></li>
