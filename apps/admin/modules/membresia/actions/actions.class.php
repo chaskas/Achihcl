@@ -22,14 +22,14 @@ class membresiaActions extends sfActions
 
   public function executeNew(sfWebRequest $request)
   {
-    $this->form = new MiembroForm();
+    $this->form = new MiembroFormAdmin();
   }
 
   public function executeCreate(sfWebRequest $request)
   {
     $this->forward404Unless($request->isMethod(sfRequest::POST));
 
-    $this->form = new MiembroForm();
+    $this->form = new MiembroFormAdmin();
 
     $this->processForm($request, $this->form);
 
@@ -39,14 +39,14 @@ class membresiaActions extends sfActions
   public function executeEdit(sfWebRequest $request)
   {
     $this->forward404Unless($miembro = Doctrine_Core::getTable('Miembro')->find(array($request->getParameter('id'))), sprintf('Object miembro does not exist (%s).', $request->getParameter('id')));
-    $this->form = new MiembroForm($miembro);
+    $this->form = new MiembroFormAdmin($miembro);
   }
 
   public function executeUpdate(sfWebRequest $request)
   {
     $this->forward404Unless($request->isMethod(sfRequest::POST) || $request->isMethod(sfRequest::PUT));
     $this->forward404Unless($miembro = Doctrine_Core::getTable('Miembro')->find(array($request->getParameter('id'))), sprintf('Object miembro does not exist (%s).', $request->getParameter('id')));
-    $this->form = new MiembroForm($miembro);
+    $this->form = new MiembroFormAdmin($miembro);
 
     $this->processForm($request, $this->form);
 

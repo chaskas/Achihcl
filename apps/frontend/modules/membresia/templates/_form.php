@@ -165,9 +165,11 @@ if ($form->hasErrors()){
           <?php echo $form['pais_empresa']->render(array('class' => 'input-large')); ?>
         </label>
   </p>
-  <div style="clear: both;"></div>
-  <p>
-    <input type="submit" value="Enviar" class="button"/>
-  </p>
+  
+  <div style="clear: both;padding-top: 20px;"></div>
+  <center><?php echo $form['captcha']->render() ?>
+  <div style="clear: both;padding-top: 20px;"></div>
+  <input type="submit" value="Enviar mi solicitud" class="button"/>
+  </center>
   <?php echo $form->renderHiddenFields(); ?>
 </form>
