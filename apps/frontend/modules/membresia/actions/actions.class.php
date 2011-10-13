@@ -36,6 +36,34 @@ class membresiaActions extends sfActions {
     if ($form->isValid()) {
       $miembro = $form->save();
 
+      //Enviar mail de aviso que alguien se registro
+
+      $message =  "<html>".
+                  "<head><title>Contacto Achih</title></head>".
+                  "<body>".
+                  "<h1>Nuevo Usuario en www.achih.cl</h1>".
+                  "<center>".
+                  "<p>Un nuevo usuario desea ser miembro de ACHIH</p>".
+                  "<p>Puede revisar la lista de usuarios postulantes haciendo click <a href='http://www.achih.cl/admin.php/membresia/aprobarMiembros'>aqu&iacute;</a></p>".
+                  "</center>".
+                  "</body>".
+                  "</html>";
+
+      $mensaje = Swift_Message::newInstance()
+        ->setFrom(array('contacto@achih.cl' => 'Contacto ACHIH'))
+        ->setTo(array('contacto@webdevel.cl')) //CAMBIAR AL CORREO DE DESTINO DEFINITIVO
+        ->setBcc(array('admin@webdevel.cl'))
+        ->setSubject('Nuevo solicitud de miembro desde www.achih.cl')
+        ->setBody($message,'text/html')
+      ;
+      $headers = $mensaje->getHeaders();
+      $headers->addTextHeader('Organization', 'ACHIH');
+      $headers->addTextHeader('Reply-To', 'ACHIH <contacto@achih.cl>');
+      $headers->addTextHeader('From', 'ACHIH <contacto@achih.cl>');
+      $headers->addTextHeader('X-Mailer', 'SwiftMailer v4.0.6');
+
+      $this->getMailer()->send($mensaje);
+
       $this->redirect('membresia/gracias');
     }
   }
