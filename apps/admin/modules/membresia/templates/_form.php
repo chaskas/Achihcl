@@ -55,15 +55,48 @@ if ($form->hasErrors()){
   </p>
   <div style="clear: both;"></div>
   <p>
-        <label style="float: left; padding-right: 20px;width:31%;">
+        <label style="float: left; padding-right: 20px;width:23%;">
           Profesi&oacute;n:
           <br/>
           <?php echo $form['profesion']->render(array('class' => 'text-input large-input')); ?>
         </label>
-        <label style="float: left; padding-right: 20px;width:31%;">
+        <label style="float: left; padding-right: 20px;width:23%;">
           Universidad / Instituto / CFT:
           <br/>
           <?php echo $form['institucion']->render(array('class' => 'text-input large-input')); ?>
+        </label>
+        <label style="float: left; padding-right: 20px;width:23%;">
+          Especialidad:
+          <br/>
+          <?php echo $form['especialidad']->render(array('class' => 'text-input large-input')); ?>
+        </label>
+        <label style="float: left; padding-right: 20px;width:23%;">
+          Sector:
+          <br/>
+          <?php echo $form['sector']->render(array('class' => 'text-input large-input')); ?>
+        </label>
+  </p>
+  <div style="clear: both;"></div>
+  <p>
+        <label style="float: left; padding-right: 20px;width:23%;">
+          Rol ACHIH:
+          <br/>
+          <?php echo $form['rol']->render(array('class' => 'text-input large-input')); ?>
+        </label>
+        <label style="float: left; padding-right: 20px;width:23%;">
+          Comisi&oacute;n
+          <br/>
+          <?php echo $form['comision']->render(array('class' => 'text-input large-input')); ?>
+        </label>
+        <label style="float: left; padding-right: 20px;width:23%;">
+          Subcomisi&oacute;n:
+          <br/>
+          <?php echo $form['subcomision']->render(array('class' => 'text-input large-input')); ?>
+        </label>
+        <label style="float: left; padding-right: 20px;width:23%;">
+          Revista CCHRC:
+          <br/>
+          <?php echo $form['cchrc']->render(array('class' => 'text-input large-input')); ?>
         </label>
   </p>
   <div style="clear: both;"></div>
@@ -95,9 +128,9 @@ if ($form->hasErrors()){
           <?php echo $form['telefono']->render(array('class' => 'text-input large-input')); ?>
         </label>
         <label style="float: left; padding-right: 20px;width:31%;">
-          Fax:
+          Celular:
           <br/>
-          <?php echo $form['fax']->render(array('class' => 'text-input large-input')); ?>
+          <?php echo $form['celular']->render(array('class' => 'text-input large-input')); ?>
         </label>
         <label style="float: left; padding-right: 20px;width:31%;">
           Pa&iacute;s:
@@ -152,9 +185,9 @@ if ($form->hasErrors()){
           <?php echo $form['telefono_empresa']->render(array('class' => 'text-input large-input')); ?>
         </label>
         <label style="float: left; padding-right: 20px;width:31%;">
-          Fax:
+          Celular:
           <br/>
-          <?php echo $form['fax_empresa']->render(array('class' => 'text-input large-input')); ?>
+          <?php echo $form['celular_empresa']->render(array('class' => 'text-input large-input')); ?>
         </label>
         <label style="float: left; padding-right: 20px;width:31%;">
           Pa&iacute;s:

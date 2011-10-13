@@ -16,8 +16,11 @@ class MiembroForm extends BaseMiembroForm
     $this->widgetSchema['nacimiento_at']= new sfWidgetFormJQueryDate(array('config' => '{showOn: "button",buttonImage: "/images/icons/calendar.png",buttonImageOnly: true,changeMonth: true,changeYear: true,yearRange: "-100:+0"}','culture'=>'es','date_widget' => new sfWidgetFormDate(array('years' => array_combine($years, $years)))));
     $this->widgetSchema['nacimiento_at']->getOption('date_widget')->setOption('format', '%day%%month%%year%');
     
-    $this->widgetSchema['pais'] = new sfWidgetFormI18nChoiceCountry(array('culture'   => 'es_CL'));
-    $this->widgetSchema['pais_empresa'] = new sfWidgetFormI18nChoiceCountry(array('culture'   => 'es_CL'));
+    $this->widgetSchema['pais'] = new sfWidgetFormI18nChoiceCountry(array('culture'   => 'es_CL', 'default' => 'CL'));
+    $this->widgetSchema['pais_empresa'] = new sfWidgetFormI18nChoiceCountry(array('culture'   => 'es_CL', 'default' => 'CL'));
+    
+    $this->widgetSchema['sector'] = new sfWidgetFormChoice(array('choices' => array('','Privado', 'MINSAL')));
+    $this->widgetSchema['rol'] = new sfWidgetFormChoice(array('choices' => array('','Director', 'Presidente','Secretario','Tesorero','Vicepresidente','Miembro Comision')));
  
     $this->validatorSchema['nombre']              = new sfValidatorString();
     $this->validatorSchema['apellido']            = new sfValidatorString();
@@ -25,7 +28,9 @@ class MiembroForm extends BaseMiembroForm
     $this->validatorSchema['rut']                 = new sfValidatorRut();
     $this->validatorSchema['nacionalidad']        = new sfValidatorString(array('required' => false));
     $this->validatorSchema['profesion']           = new sfValidatorString(array('required' => false));
+    $this->validatorSchema['especialidad']        = new sfValidatorString(array('required' => false));
     $this->validatorSchema['institucion']         = new sfValidatorString(array('required' => false));
+    $this->validatorSchema['sector']              = new sfValidatorString(array('required' => false));
     $this->validatorSchema['direccion']           = new sfValidatorString(array('required' => false));
     $this->validatorSchema['comuna']              = new sfValidatorString(array('required' => false));
     $this->validatorSchema['ciudad']              = new sfValidatorString(array('required' => false));
@@ -50,6 +55,8 @@ class MiembroForm extends BaseMiembroForm
         'nacimiento_at'     => 'Fecha de Nacimiento',
         'profesion'         => 'Profesion',
         'institucion'       => 'Institución',
+        'sector'            => 'Sector',
+        'especialidad'      => 'Especialidad',
         'direccion'         => 'Dirección',
         'comuna'            => 'Comuna',
         'ciudad'            => 'Ciudad',
@@ -78,7 +85,11 @@ class MiembroForm extends BaseMiembroForm
     ));
     
     unset(
-      $this['isAprobado']
+      $this['isAprobado'],
+      $this['rol'],
+      $this['comision'],
+      $this['subcomision'],
+      $this['cchrc']
     );
   }
 }
@@ -91,9 +102,12 @@ class MiembroFormAdmin extends MiembroForm
     $this->widgetSchema['nacimiento_at']= new sfWidgetFormJQueryDate(array('config' => '{showOn: "button",buttonImage: "/images/icons/calendar.png",buttonImageOnly: true,changeMonth: true,changeYear: true,yearRange: "-100:+0"}','culture'=>'es','date_widget' => new sfWidgetFormDate(array('years' => array_combine($years, $years)))));
     $this->widgetSchema['nacimiento_at']->getOption('date_widget')->setOption('format', '%day%%month%%year%');
     
-    $this->widgetSchema['pais'] = new sfWidgetFormI18nChoiceCountry(array('culture'   => 'es_CL'));
-    $this->widgetSchema['pais_empresa'] = new sfWidgetFormI18nChoiceCountry(array('culture'   => 'es_CL'));
- 
+    $this->widgetSchema['pais'] = new sfWidgetFormI18nChoiceCountry(array('culture'   => 'es_CL', 'default' => 'CL'));
+    $this->widgetSchema['pais_empresa'] = new sfWidgetFormI18nChoiceCountry(array('culture'   => 'es_CL', 'default' => 'CL'));
+    
+    $this->widgetSchema['sector'] = new sfWidgetFormChoice(array('choices' => array('','Privado', 'MINSAL')));
+    $this->widgetSchema['rol'] = new sfWidgetFormChoice(array('choices' => array('','Director', 'Presidente','Secretario','Tesorero','Vicepresidente','Miembro Comision')));
+
     $this->validatorSchema['nombre']              = new sfValidatorString();
     $this->validatorSchema['apellido']            = new sfValidatorString();
     $this->validatorSchema['nacimiento_at']       = new sfValidatorDate(array('required' => false));
@@ -102,6 +116,8 @@ class MiembroFormAdmin extends MiembroForm
     $this->validatorSchema['profesion']           = new sfValidatorString(array('required' => false));
     $this->validatorSchema['institucion']         = new sfValidatorString(array('required' => false));
     $this->validatorSchema['direccion']           = new sfValidatorString(array('required' => false));
+    $this->validatorSchema['especialidad']        = new sfValidatorString(array('required' => false));
+    $this->validatorSchema['sector']              = new sfValidatorString(array('required' => false));
     $this->validatorSchema['comuna']              = new sfValidatorString(array('required' => false));
     $this->validatorSchema['ciudad']              = new sfValidatorString(array('required' => false));
     $this->validatorSchema['pais']                = new sfValidatorString(array('required' => false));
@@ -118,6 +134,10 @@ class MiembroFormAdmin extends MiembroForm
     $this->validatorSchema['fax_empresa']         = new sfValidatorString(array('required' => false));
     $this->validatorSchema['email_empresa']       = new sfValidatorEmail(array('required' => false));
     $this->validatorSchema['isAprobado']          = new sfValidatorBoolean();
+    $this->validatorSchema['rol']                 = new sfValidatorString(array('required' => false));
+    $this->validatorSchema['comision']            = new sfValidatorString(array('required' => false));
+    $this->validatorSchema['subcomision']         = new sfValidatorString(array('required' => false));
+    $this->validatorSchema['cchrc']               = new sfValidatorBoolean(array('required' => false));
 
     $this->widgetSchema->setLabels(array(
         'nombre'            => 'Nombre',
@@ -125,6 +145,8 @@ class MiembroFormAdmin extends MiembroForm
         'nacimiento_at'     => 'Fecha de Nacimiento',
         'profesion'         => 'Profesion',
         'institucion'       => 'Institución',
+        'sector'            => 'Sector',
+        'especialidad'      => 'Especialidad',
         'direccion'         => 'Dirección',
         'comuna'            => 'Comuna',
         'ciudad'            => 'Ciudad',

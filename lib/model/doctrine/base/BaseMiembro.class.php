@@ -11,13 +11,15 @@
  * @property text $rut
  * @property text $nacionalidad
  * @property text $profesion
+ * @property text $especialidad
  * @property text $institucion
+ * @property text $sector
  * @property text $direccion
  * @property text $comuna
  * @property text $ciudad
  * @property text $pais
  * @property text $telefono
- * @property text $fax
+ * @property text $celular
  * @property text $email
  * @property text $empresa
  * @property text $cargo
@@ -26,9 +28,13 @@
  * @property text $ciudad_empresa
  * @property text $pais_empresa
  * @property text $telefono_empresa
- * @property text $fax_empresa
+ * @property text $celular_empresa
  * @property text $email_empresa
  * @property boolean $isAprobado
+ * @property text $rol
+ * @property text $comision
+ * @property text $subcomision
+ * @property boolean $cchrc
  * 
  * @method text      getNombre()            Returns the current record's "nombre" value
  * @method text      getApellido()          Returns the current record's "apellido" value
@@ -36,13 +42,15 @@
  * @method text      getRut()               Returns the current record's "rut" value
  * @method text      getNacionalidad()      Returns the current record's "nacionalidad" value
  * @method text      getProfesion()         Returns the current record's "profesion" value
+ * @method text      getEspecialidad()      Returns the current record's "especialidad" value
  * @method text      getInstitucion()       Returns the current record's "institucion" value
+ * @method text      getSector()            Returns the current record's "sector" value
  * @method text      getDireccion()         Returns the current record's "direccion" value
  * @method text      getComuna()            Returns the current record's "comuna" value
  * @method text      getCiudad()            Returns the current record's "ciudad" value
  * @method text      getPais()              Returns the current record's "pais" value
  * @method text      getTelefono()          Returns the current record's "telefono" value
- * @method text      getFax()               Returns the current record's "fax" value
+ * @method text      getCelular()           Returns the current record's "celular" value
  * @method text      getEmail()             Returns the current record's "email" value
  * @method text      getEmpresa()           Returns the current record's "empresa" value
  * @method text      getCargo()             Returns the current record's "cargo" value
@@ -51,22 +59,28 @@
  * @method text      getCiudadEmpresa()     Returns the current record's "ciudad_empresa" value
  * @method text      getPaisEmpresa()       Returns the current record's "pais_empresa" value
  * @method text      getTelefonoEmpresa()   Returns the current record's "telefono_empresa" value
- * @method text      getFaxEmpresa()        Returns the current record's "fax_empresa" value
+ * @method text      getCelularEmpresa()    Returns the current record's "celular_empresa" value
  * @method text      getEmailEmpresa()      Returns the current record's "email_empresa" value
  * @method boolean   getIsAprobado()        Returns the current record's "isAprobado" value
+ * @method text      getRol()               Returns the current record's "rol" value
+ * @method text      getComision()          Returns the current record's "comision" value
+ * @method text      getSubcomision()       Returns the current record's "subcomision" value
+ * @method boolean   getCchrc()             Returns the current record's "cchrc" value
  * @method Miembro   setNombre()            Sets the current record's "nombre" value
  * @method Miembro   setApellido()          Sets the current record's "apellido" value
  * @method Miembro   setNacimientoAt()      Sets the current record's "nacimiento_at" value
  * @method Miembro   setRut()               Sets the current record's "rut" value
  * @method Miembro   setNacionalidad()      Sets the current record's "nacionalidad" value
  * @method Miembro   setProfesion()         Sets the current record's "profesion" value
+ * @method Miembro   setEspecialidad()      Sets the current record's "especialidad" value
  * @method Miembro   setInstitucion()       Sets the current record's "institucion" value
+ * @method Miembro   setSector()            Sets the current record's "sector" value
  * @method Miembro   setDireccion()         Sets the current record's "direccion" value
  * @method Miembro   setComuna()            Sets the current record's "comuna" value
  * @method Miembro   setCiudad()            Sets the current record's "ciudad" value
  * @method Miembro   setPais()              Sets the current record's "pais" value
  * @method Miembro   setTelefono()          Sets the current record's "telefono" value
- * @method Miembro   setFax()               Sets the current record's "fax" value
+ * @method Miembro   setCelular()           Sets the current record's "celular" value
  * @method Miembro   setEmail()             Sets the current record's "email" value
  * @method Miembro   setEmpresa()           Sets the current record's "empresa" value
  * @method Miembro   setCargo()             Sets the current record's "cargo" value
@@ -75,9 +89,13 @@
  * @method Miembro   setCiudadEmpresa()     Sets the current record's "ciudad_empresa" value
  * @method Miembro   setPaisEmpresa()       Sets the current record's "pais_empresa" value
  * @method Miembro   setTelefonoEmpresa()   Sets the current record's "telefono_empresa" value
- * @method Miembro   setFaxEmpresa()        Sets the current record's "fax_empresa" value
+ * @method Miembro   setCelularEmpresa()    Sets the current record's "celular_empresa" value
  * @method Miembro   setEmailEmpresa()      Sets the current record's "email_empresa" value
  * @method Miembro   setIsAprobado()        Sets the current record's "isAprobado" value
+ * @method Miembro   setRol()               Sets the current record's "rol" value
+ * @method Miembro   setComision()          Sets the current record's "comision" value
+ * @method Miembro   setSubcomision()       Sets the current record's "subcomision" value
+ * @method Miembro   setCchrc()             Sets the current record's "cchrc" value
  * 
  * @package    achihcl
  * @subpackage model
@@ -113,7 +131,15 @@ abstract class BaseMiembro extends sfDoctrineRecord
              'type' => 'text',
              'notnull' => false,
              ));
+        $this->hasColumn('especialidad', 'text', null, array(
+             'type' => 'text',
+             'notnull' => false,
+             ));
         $this->hasColumn('institucion', 'text', null, array(
+             'type' => 'text',
+             'notnull' => false,
+             ));
+        $this->hasColumn('sector', 'text', null, array(
              'type' => 'text',
              'notnull' => false,
              ));
@@ -137,7 +163,7 @@ abstract class BaseMiembro extends sfDoctrineRecord
              'type' => 'text',
              'notnull' => false,
              ));
-        $this->hasColumn('fax', 'text', null, array(
+        $this->hasColumn('celular', 'text', null, array(
              'type' => 'text',
              'notnull' => false,
              ));
@@ -173,7 +199,7 @@ abstract class BaseMiembro extends sfDoctrineRecord
              'type' => 'text',
              'notnull' => false,
              ));
-        $this->hasColumn('fax_empresa', 'text', null, array(
+        $this->hasColumn('celular_empresa', 'text', null, array(
              'type' => 'text',
              'notnull' => false,
              ));
@@ -185,6 +211,23 @@ abstract class BaseMiembro extends sfDoctrineRecord
              'type' => 'boolean',
              'notnull' => true,
              'default' => '0',
+             ));
+        $this->hasColumn('rol', 'text', null, array(
+             'type' => 'text',
+             'notnull' => false,
+             ));
+        $this->hasColumn('comision', 'text', null, array(
+             'type' => 'text',
+             'notnull' => false,
+             ));
+        $this->hasColumn('subcomision', 'text', null, array(
+             'type' => 'text',
+             'notnull' => false,
+             ));
+        $this->hasColumn('cchrc', 'boolean', null, array(
+             'type' => 'boolean',
+             'notnull' => false,
+             'default' => false,
              ));
     }
 

@@ -122,6 +122,16 @@
           </div>
         </div>
       </li>
+      <li>
+        <?php echo image_tag('slide14.jpg'); ?>
+        <div class="info">
+          <div>
+            <h1>Comisi&oacute;n Gases Cl&iacute;nicos</h1>
+            <p>Ing. Rub&eacute;n Astudillo<br/>Empresario</p>
+            <p>Ing. Marcelo Verdessi<br/>SSVSA</p>
+          </div>
+        </div>
+      </li>
     </ul>
   </div>
 </div>
@@ -132,12 +142,13 @@
       <?php foreach ($noticias as $noticia): ?>
         <div class="post">
           <h2><?php echo link_to($noticia->getTitulo(), 'noticia/show?id=' . $noticia->getId()); ?></h2>
-
-        <?php echo tools::getResume($noticia->getRawValue()->getCuerpo()); ?>
-        <br/>
-        <a class="more" href="<?php echo url_for('noticia/show?id=' . $noticia->getId()); ?>">Leer m&aacute;s</a>
-        <br/>
-      </div>
+          <div style="clear: both"></div>
+          <?php echo tools::getResume($noticia->getRawValue()->getCuerpo()); ?>
+          <div style="clear: both"></div>
+          <br/>
+          <a class="more" href="<?php echo url_for('noticia/show?id=' . $noticia->getId()); ?>">Leer m&aacute;s</a>
+          <br/>
+        </div>
       <?php endforeach; ?>
       </div>
     </div>
@@ -146,7 +157,7 @@
         <h2>Men&uacute;</h2>
         <ul class="catlist">
           <li><a href="<?php echo url_for('static/index'); ?>">Inicio</a></li>
-        <li><a href="http://comision.achih.cl">Comisiones</a></li>
+        <li><a href="http://comision.achih.cl" target="blank">Comisiones</a></li>
         <li><a href="<?php echo url_for('static/eventos'); ?>">Eventos</a></li>
         <li><a href="<?php echo url_for('membresia/new'); ?>">Membres&iacute;a</a></li>
         <li><a href="<?php echo url_for('static/docs'); ?>">Banco de Documentos</a></li>

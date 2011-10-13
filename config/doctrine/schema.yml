@@ -37,13 +37,15 @@ Miembro:
     rut:                { type: text, notnull: true }
     nacionalidad:       { type: text, notnull: false }
     profesion:          { type: text, notnull: false }
+    especialidad:       { type: text, notnull: false }
     institucion:        { type: text, notnull: false }
+    sector:             { type: text, notnull: false }
     direccion:          { type: text, notnull: false }
     comuna:             { type: text, notnull: false }
     ciudad:             { type: text, notnull: false }
     pais:               { type: text, notnull: false }
     telefono:           { type: text, notnull: false }
-    fax:                { type: text, notnull: false }
+    celular:            { type: text, notnull: false }
     email:              { type: text, notnull: true }
     empresa:            { type: text, notnull: false }
     cargo:              { type: text, notnull: false }
@@ -52,6 +54,10 @@ Miembro:
     ciudad_empresa:     { type: text, notnull: false }
     pais_empresa:       { type: text, notnull: false }
     telefono_empresa:   { type: text, notnull: false }
-    fax_empresa:        { type: text, notnull: false }
+    celular_empresa:    { type: text, notnull: false }
     email_empresa:      { type: text, notnull: false }
     isAprobado:         { type: boolean, notnull: true, default: '0' }
+    rol:                { type: text, notnull: false }
+    comision:           { type: text, notnull: false }
+    subcomision:        { type: text, notnull: false }
+    cchrc:              { type: boolean, notnull: false, default: false }

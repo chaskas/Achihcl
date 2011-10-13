@@ -58,15 +58,25 @@ if ($form->hasErrors()){
   </p>
   <div style="clear: both;"></div>
   <p>
-        <label style="float: left; padding-right: 20px;width:31%;">
+        <label style="float: left; padding-right: 20px;width:23%;">
           Profesi&oacute;n:
           <br/>
           <?php echo $form['profesion']->render(array('class' => 'input-large')); ?>
         </label>
-        <label style="float: left; padding-right: 20px;width:31%;">
+        <label style="float: left; padding-right: 20px;width:23%;">
           Universidad / Instituto / CFT:
           <br/>
           <?php echo $form['institucion']->render(array('class' => 'input-large')); ?>
+        </label>
+        <label style="float: left; padding-right: 20px;width:23%;">
+          Especialidad:
+          <br/>
+          <?php echo $form['especialidad']->render(array('class' => 'input-large')); ?>
+        </label>
+        <label style="float: left; padding-right: 20px;width:22%;">
+          Sector:
+          <br/>
+          <?php echo $form['sector']->render(array('class' => 'input-large')); ?>
         </label>
   </p>
   <div style="clear: both;"></div>
@@ -98,9 +108,9 @@ if ($form->hasErrors()){
           <?php echo $form['telefono']->render(array('class' => 'input-large')); ?>
         </label>
         <label style="float: left; padding-right: 20px;width:31%;">
-          Fax:
+          Celular:
           <br/>
-          <?php echo $form['fax']->render(array('class' => 'input-large')); ?>
+          <?php echo $form['celular']->render(array('class' => 'input-large')); ?>
         </label>
         <label style="float: left; padding-right: 20px;width:31%;">
           Pa&iacute;s:
@@ -155,9 +165,9 @@ if ($form->hasErrors()){
           <?php echo $form['telefono_empresa']->render(array('class' => 'input-large')); ?>
         </label>
         <label style="float: left; padding-right: 20px;width:31%;">
-          Fax:
+          Celular:
           <br/>
-          <?php echo $form['fax_empresa']->render(array('class' => 'input-large')); ?>
+          <?php echo $form['celular_empresa']->render(array('class' => 'input-large')); ?>
         </label>
         <label style="float: left; padding-right: 20px;width:31%;">
           Pa&iacute;s:
