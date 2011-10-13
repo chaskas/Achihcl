@@ -70,7 +70,7 @@ if ($form->hasErrors()){
           <br/>
           <?php echo $form['especialidad']->render(array('class' => 'text-input large-input')); ?>
         </label>
-        <label style="float: left; padding-right: 20px;width:23%;">
+        <label style="float: left; padding-right: 20px;width:22%;">
           Sector:
           <br/>
           <?php echo $form['sector']->render(array('class' => 'text-input large-input')); ?>
@@ -78,7 +78,7 @@ if ($form->hasErrors()){
   </p>
   <div style="clear: both;"></div>
   <p>
-        <label style="float: left; padding-right: 20px;width:23%;">
+        <label style="float: left; padding-right: 20px;width:22%;">
           Rol ACHIH:
           <br/>
           <?php echo $form['rol']->render(array('class' => 'text-input large-input')); ?>
