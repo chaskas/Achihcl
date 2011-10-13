@@ -37,15 +37,14 @@ class membresiaActions extends sfActions {
       $miembro = $form->save();
 
       //Enviar mail de aviso que alguien se registro
-
       $message =  "<html>".
                   "<head><title>Contacto Achih</title></head>".
                   "<body>".
-                  "<h1>Nuevo Usuario en www.achih.cl</h1>".
-                  "<center>".
+                  "<img src='http://www.achih.cl/images/logo-med.png'/>".
+                  "<br/>".
+                  "<h3>Nuevo Usuario</h3>".
                   "<p>Un nuevo usuario desea ser miembro de ACHIH</p>".
                   "<p>Puede revisar la lista de usuarios postulantes haciendo click <a href='http://www.achih.cl/admin.php/membresia/aprobarMiembros'>aqu&iacute;</a></p>".
-                  "</center>".
                   "</body>".
                   "</html>";
 

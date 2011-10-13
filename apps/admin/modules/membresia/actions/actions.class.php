@@ -25,6 +25,31 @@ class membresiaActions extends sfActions
     $this->form = new MiembroFormAdmin();
   }
 
+  public function executeEmail(sfWebRequest $request)
+  {
+    $this->form = new EmailMasivoForm();
+  }
+  public function executeEmailCreate(sfWebRequest $request)
+  {
+    $this->form = new EmailMasivoForm();
+    $this->processForm($request, $this->form);
+    $this->setTemplate('email');
+  }
+  public function executeSend(sfWebRequest $request)
+  {
+    $form->bind(
+      $request->getParameter($form->getName()),
+      $request->getFiles($form->getName())
+    );
+
+    if ($form->isValid())
+    {
+      //Enviar emails masivos
+
+      $this->redirect('membresia/index');
+    }
+  }
+
   public function executeCreate(sfWebRequest $request)
   {
     $this->forward404Unless($request->isMethod(sfRequest::POST));
