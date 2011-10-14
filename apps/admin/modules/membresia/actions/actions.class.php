@@ -103,7 +103,7 @@ class membresiaActions extends sfActions
         ->setFrom(array('contacto@achih.cl' => 'Contacto ACHIH'))
         ->setTo(array('contacto@webdevel.cl')) //CAMBIAR AL CORREO DE DESTINO DEFINITIVO
         ->setBcc(array('admin@webdevel.cl'))
-        ->setSubject($form->getValue('message'))
+        ->setSubject($form->getValue('subject'))
         ->setBody($message,'text/html')
       ;
       $headers = $mensaje->getHeaders();
