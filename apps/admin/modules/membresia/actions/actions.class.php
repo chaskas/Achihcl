@@ -119,7 +119,7 @@ class membresiaActions extends sfActions
         $headers->addTextHeader('From', 'ACHIH <contacto@achih.cl>');
         $headers->addTextHeader('X-Mailer', 'SwiftMailer v4.0.6');
 
-        $this->getMailer()->send($mensaje);
+        if($this->getMailer()->send($mensaje))$this->redirect('membresia/index');
       }
 
       $this->redirect('membresia/sent');
