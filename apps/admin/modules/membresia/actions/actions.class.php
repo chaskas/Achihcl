@@ -93,9 +93,9 @@ class membresiaActions extends sfActions
       //Enviar emails masivos
 
       $message =  "<html>".
-                  "<head><title>".$form['subject']."</title></head>".
+                  "<head><title>".$request->getParameter('subject')."</title></head>".
                   "<body>".
-                  $form['message'].
+                  $request->getParameter('message').
                   "</body>".
                   "</html>";
 
@@ -103,7 +103,7 @@ class membresiaActions extends sfActions
         ->setFrom(array('contacto@achih.cl' => 'Contacto ACHIH'))
         ->setTo(array('contacto@webdevel.cl')) //CAMBIAR AL CORREO DE DESTINO DEFINITIVO
         ->setBcc(array('admin@webdevel.cl'))
-        ->setSubject($form['subject'])
+        ->setSubject($request->getParameter('message'))
         ->setBody($message,'text/html')
       ;
       $headers = $mensaje->getHeaders();
