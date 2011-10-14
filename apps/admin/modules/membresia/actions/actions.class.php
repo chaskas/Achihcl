@@ -92,27 +92,35 @@ class membresiaActions extends sfActions
     {
       //Enviar emails masivos
 
-      $message =  "<html>".
-                  "<head><title>".$form->getValue('subject')."</title></head>".
-                  "<body>".
-                  $form->getValue('message').
-                  "</body>".
-                  "</html>";
+      $this->miembros = Doctrine_Core::getTable('Miembro')
+        ->createQuery('a')
+        ->select('a.email')
+        ->where('a.isAprobado = 1')
+        ->execute();
 
-      $mensaje = Swift_Message::newInstance()
-        ->setFrom(array('contacto@achih.cl' => 'Contacto ACHIH'))
-        ->setTo(array('contacto@webdevel.cl')) //CAMBIAR AL CORREO DE DESTINO DEFINITIVO
-        ->setBcc(array('admin@webdevel.cl'))
-        ->setSubject($form->getValue('subject'))
-        ->setBody($message,'text/html')
-      ;
-      $headers = $mensaje->getHeaders();
-      $headers->addTextHeader('Organization', 'ACHIH');
-      $headers->addTextHeader('Reply-To', 'ACHIH <contacto@achih.cl>');
-      $headers->addTextHeader('From', 'ACHIH <contacto@achih.cl>');
-      $headers->addTextHeader('X-Mailer', 'SwiftMailer v4.0.6');
+      foreach($this->miembros as $miembro) {
+        $message =  "<html>".
+                    "<head><title>".$form->getValue('subject')."</title></head>".
+                    "<body>".
+                    $form->getValue('message').
+                    "</body>".
+                    "</html>";
 
-      $this->getMailer()->send($mensaje);
+        $mensaje = Swift_Message::newInstance()
+          ->setFrom(array('contacto@achih.cl' => 'Contacto ACHIH'))
+          ->setTo(array($miembro->getEmail())) //CAMBIAR AL CORREO DE DESTINO DEFINITIVO
+          ->setBcc(array('admin@webdevel.cl'))
+          ->setSubject($form->getValue('subject'))
+          ->setBody($message,'text/html')
+        ;
+        $headers = $mensaje->getHeaders();
+        $headers->addTextHeader('Organization', 'ACHIH');
+        $headers->addTextHeader('Reply-To', 'ACHIH <contacto@achih.cl>');
+        $headers->addTextHeader('From', 'ACHIH <contacto@achih.cl>');
+        $headers->addTextHeader('X-Mailer', 'SwiftMailer v4.0.6');
+
+        $this->getMailer()->send($mensaje);
+      }
 
       $this->redirect('membresia/sent');
     }
