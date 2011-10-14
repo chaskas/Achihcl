@@ -19,6 +19,7 @@ class EmailmasivoForm extends sfForm
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
     $this->widgetSchema->setNameFormat('email[%s]');
+    $this->widgetSchema->setFormFormatterName('list');
 
   }
 }
