@@ -1,6 +1,6 @@
 <?php
 
-class EmailMasivoForm extends sfForm
+class EmailmasivoForm extends sfForm
 {
   public function configure()
   {
@@ -16,6 +16,9 @@ class EmailMasivoForm extends sfForm
 
     $this->validatorSchema['subject'] = new sfValidatorString(array('required'=>true));
     $this->validatorSchema['message'] = new sfValidatorString(array('required'=>true));
+
+    $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
+    $this->widgetSchema->setNameFormat('email[%s]');
 
   }
 }

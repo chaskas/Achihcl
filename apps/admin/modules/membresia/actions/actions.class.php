@@ -25,31 +25,6 @@ class membresiaActions extends sfActions
     $this->form = new MiembroFormAdmin();
   }
 
-  public function executeEmail(sfWebRequest $request)
-  {
-    $this->form = new EmailMasivoForm();
-  }
-  public function executeEmailCreate(sfWebRequest $request)
-  {
-    $this->form = new EmailMasivoForm();
-    $this->processForm($request, $this->form);
-    $this->setTemplate('email');
-  }
-  public function executeSend(sfWebRequest $request)
-  {
-    $form->bind(
-      $request->getParameter($form->getName()),
-      $request->getFiles($form->getName())
-    );
-
-    if ($form->isValid())
-    {
-      //Enviar emails masivos
-
-      $this->redirect('membresia/index');
-    }
-  }
-
   public function executeCreate(sfWebRequest $request)
   {
     $this->forward404Unless($request->isMethod(sfRequest::POST));
@@ -97,6 +72,54 @@ class membresiaActions extends sfActions
 
       $this->redirect('membresia/edit?id='.$miembro->getId());
     }
+  }
+  public function executeEmail(sfWebRequest $request)
+  {
+    $this->form = new EmailmasivoForm();
+  }
+  public function executeEmailCreate(sfWebRequest $request)
+  {
+    $this->forward404Unless($request->isMethod(sfRequest::POST));
+    $this->form = new EmailmasivoForm();
+    $this->processEmail($request, $this->form);
+    $this->setTemplate('email');
+  }
+  protected function processEmail(sfWebRequest $request, sfForm $form)
+  {
+    $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
+
+    if ($form->isValid())
+    {
+      //Enviar emails masivos
+
+      $message =  "<html>".
+                  "<head><title>".$form['subject']."</title></head>".
+                  "<body>".
+                  $form['message'].
+                  "</body>".
+                  "</html>";
+
+      $mensaje = Swift_Message::newInstance()
+        ->setFrom(array('contacto@achih.cl' => 'Contacto ACHIH'))
+        ->setTo(array('contacto@webdevel.cl')) //CAMBIAR AL CORREO DE DESTINO DEFINITIVO
+        ->setBcc(array('admin@webdevel.cl'))
+        ->setSubject($form['subject'])
+        ->setBody($message,'text/html')
+      ;
+      $headers = $mensaje->getHeaders();
+      $headers->addTextHeader('Organization', 'ACHIH');
+      $headers->addTextHeader('Reply-To', 'ACHIH <contacto@achih.cl>');
+      $headers->addTextHeader('From', 'ACHIH <contacto@achih.cl>');
+      $headers->addTextHeader('X-Mailer', 'SwiftMailer v4.0.6');
+
+      $this->getMailer()->send($mensaje);
+
+      $this->redirect('membresia/sent');
+    }
+  }
+  public function executeSent(sfWebRequest $request)
+  {
+    
   }
   public function executeAprobarMiembros(sfWebRequest $request)
   {
