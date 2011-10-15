@@ -108,7 +108,7 @@ class membresiaActions extends sfActions
 
         $mensaje = Swift_Message::newInstance()
           ->setFrom(array('contacto@achih.cl' => 'Contacto ACHIH'))
-          ->setTo(array('contacto@webdevel.cl')) //CAMBIAR AL CORREO DE DESTINO DEFINITIVO
+          ->setTo(array($miembro->getEmail())) //CAMBIAR AL CORREO DE DESTINO DEFINITIVO
           ->setBcc(array('admin@webdevel.cl'))
           ->setSubject($form->getValue('subject'))
           ->setBody($message,'text/html')

@@ -48,8 +48,8 @@ all:
     transport:
       class: Swift_SmtpTransport
       param:
-        host:       smtp.gmail.com
-        port:       465
-        encryption: ssl
-        username:   contacto@achih.cl
-        password:   achihachih
+        host:       localhost
+        port:       25
+        encryption: ~
+        username:   ~
+        password:   ~
