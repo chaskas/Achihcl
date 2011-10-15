@@ -21,6 +21,11 @@ class staticActions extends sfActions
       ->createQuery('a')
       ->orderBy('a.created_at DESC')
       ->execute();
+    
+    $this->empresas_colaboradoras = Doctrine_Core::getTable('EmpresaColaboradora')
+      ->createQuery('a')
+      ->orderBy('a.nombre ASC')
+      ->execute();
   }
   public function executeEventos(sfWebRequest $request)
   {

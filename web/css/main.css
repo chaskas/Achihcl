@@ -282,11 +282,20 @@ a.more {
 
 }
 
+#two-col #left-menu {
+  float: left;
+  width: 180px;
+  margin-bottom: 35px;
+  margin-right: 15px;
+  display: block;
+}
+
 /* Left column */
 #two-col #left {
   float: left;
-  width: 580px;
+  width: 550px;
   margin-bottom: 35px;
+  margin-right: 15px;
 }
 #two-col #left h1 {
   margin-bottom: 13px;
@@ -317,7 +326,7 @@ a.more {
 }
 #blog .post {
   background: url(../images/blog_div.gif) no-repeat;
-  padding: 30px 0px;
+  padding: 0px 0px 30px 0px; 
 }
 #blog .post h2 {
   font: 2.1em Georgia;
@@ -349,7 +358,7 @@ a.more {
 }
 #blog .post p {
   line-height: 1.9em;
-  font; 1.1em Georgia;
+  font: 1.1em Georgia;
 }
 #blog a.moreposts {
   font-size: 1.5em;
@@ -388,7 +397,7 @@ a.more {
 /* Right column */
 #two-col #right {
   float: right;
-  width: 280px;
+  width: 180px;
   margin-bottom: 35px;
 }
 /* Lists */
@@ -402,7 +411,9 @@ ul.catlist li {
 ul.catlist li a {
   color: #000000;
 }
-
+ul.catlist li a img {
+  padding: 10px 0px;
+}
 /* Box 1 (tan) */
 .box1 {
   background: #e4e2d2;
@@ -427,12 +438,12 @@ ul.catlist li a {
 /* Box 2 (green twitter) */	
 .box2 {
   background: url(../images/green_box.gif) no-repeat #46710b;
-  padding: 22px;
+  padding: 18px;
   color: #ffffff;
   margin-bottom: 25px;
 }
 .box2 h2 {
-  font: normal 1.9em Georgia;
+  font: normal 1.7em Georgia;
   margin-bottom: 8px;
 }
 .box2 span.cite {
@@ -444,6 +455,10 @@ ul.catlist li a {
   display: inline-block;
   padding: 5px 0px 5px 14px;
   color: #ffffff;
+}
+.box2 ul.catlist li a {
+  color: #FFFFFF;
+  display: inline-block;
 }
 
 /* News updates */	

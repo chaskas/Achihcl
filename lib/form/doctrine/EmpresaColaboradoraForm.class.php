@@ -31,7 +31,7 @@ class EmpresaColaboradoraForm extends BaseEmpresaColaboradoraForm
 
     $this->validatorSchema['logo'] = new sfValidatorFile(array(
                 'path' => sfConfig::get('sf_upload_dir') . '/empresas',
-                'required' => true,
+                'required' => false,
                 'mime_types' => 'web_images',
                 'validated_file_class' => 'sfResizedFileLogo'
             ));

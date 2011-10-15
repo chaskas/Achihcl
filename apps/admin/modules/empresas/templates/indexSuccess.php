@@ -19,7 +19,6 @@
       <table class="listados">
         <thead>
           <tr>
-            <th>Logo</th>
             <th>Nombre</th>
             <th>URL</th>
             <th>Opciones</th>
@@ -30,7 +29,6 @@
           <?php foreach ($empresa_colaboradoras as $empresa_colaboradora): ?>
           <?php $i = 0; ?>
             <tr <?php if ($i % 2 != 0)echo "class='alt-row'"; ?>>
-              <td><?php echo image_tag('http://'.$_SERVER['HTTP_HOST'].'/uploads/empresas/s_'.$empresa_colaboradora->getLogo()) ?></td>
               <td><?php echo $empresa_colaboradora->getNombre() ?></td>
               <td><?php echo link_to($empresa_colaboradora->getUrl(),$empresa_colaboradora->getUrl(),'target=blank') ?></td>
               <td>

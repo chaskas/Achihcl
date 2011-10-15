@@ -137,6 +137,24 @@
 </div>
 </div>
 <div id="two-col" class="page">
+  <div id="left-menu">
+    <div class="box1">
+    <h2>Empresas Colaboradoras</h2>
+      <ul class="catlist">
+          <?php foreach($empresas_colaboradoras as $emp) : ?>
+            <li>
+              <center>
+              <?php if($emp->getLogo()) : ?>
+              <?php echo link_to(image_tag('http://'.$_SERVER['HTTP_HOST'].'/uploads/empresas/s_'.$emp->getLogo()),$emp->getUrl(),'target=_blank,alt='.$emp->getNombre().',title='.$emp->getNombre()) ?>
+              <?php else : ?>
+              <h3><?php echo link_to($emp->getNombre(),$emp->getUrl(),'target=_blank,alt='.$emp->getNombre().',title='.$emp->getNombre()); ?></h3>
+              <?php endif; ?>
+              </center>
+            </li>
+          <?php endforeach; ?>
+      </ul>
+    </div>
+  </div>
   <div id="left">
     <div id="blog">
       <?php foreach ($noticias as $noticia): ?>
@@ -157,15 +175,15 @@
         <h2>Men&uacute;</h2>
         <ul class="catlist">
           <li><a href="<?php echo url_for('static/index'); ?>">Inicio</a></li>
-        <li><a href="http://comision.achih.cl" target="blank">Comisiones</a></li>
-        <li><a href="<?php echo url_for('static/eventos'); ?>">Eventos</a></li>
-        <li><a href="<?php echo url_for('membresia/new'); ?>">Membres&iacute;a</a></li>
-        <li><a href="<?php echo url_for('static/docs'); ?>">Banco de Documentos</a></li>
-        <!--        <li><a href="#">Bolsa de Trabajo</a></li>-->
-        <li><a href="<?php echo url_for('static/links'); ?>">Links</a></li>
-        <li><a href="<?php echo url_for('static/contact'); ?>">Contacto</a></li>
-      </ul>
-    </div>
+          <li><a href="http://comision.achih.cl" target="blank">Comisiones</a></li>
+          <li><a href="<?php echo url_for('static/eventos'); ?>">Eventos</a></li>
+          <li><a href="<?php echo url_for('membresia/new'); ?>">Membres&iacute;a</a></li>
+          <li><a href="<?php echo url_for('static/docs'); ?>">Banco de Documentos</a></li>
+          <!--        <li><a href="#">Bolsa de Trabajo</a></li>-->
+          <li><a href="<?php echo url_for('static/links'); ?>">Links</a></li>
+          <li><a href="<?php echo url_for('static/contact'); ?>">Contacto</a></li>
+        </ul>
+      </div>
     <div class="box2">
       <h2>Estamos en construcci&oacute;n</h2>
       <div id="twitter"></div>
