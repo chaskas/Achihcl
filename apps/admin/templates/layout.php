@@ -80,6 +80,15 @@
                 </ul>
               </li>
               <li>
+                <a href="<?php echo url_for('empresas/index');?>" class="nav-top-item <?php if($sf_context->getModuleName()=='empresas') echo "current"; ?> ">
+                  Emp. Colaboradoras
+                </a>
+                <ul>
+                  <li><a <?php if($sf_context->getActionName()=='new' && $sf_context->getModuleName()=='empresas') echo "class='current'"; ?> href="<?php echo url_for('empresas/new'); ?>">Nueva</a></li>
+                  <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='empresas') echo "class='current'"; ?> href="<?php echo url_for('empresas/index'); ?>">Ver todas</a></li>
+                </ul>
+              </li>
+              <li>
                 <a href="<?php echo url_for('links/index');?>" class="nav-top-item <?php if($sf_context->getModuleName()=='links') echo "current"; ?> ">
                   Links
                 </a>

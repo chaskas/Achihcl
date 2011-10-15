@@ -45,8 +45,8 @@
 
       </table>
 
-    </div> <!-- End #tab1 -->
+    </div>
 
-  </div> <!-- End .content-box-content -->
+  </div>
 
 </div>

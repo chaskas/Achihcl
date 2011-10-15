@@ -61,3 +61,10 @@ Miembro:
     comision:           { type: text, notnull: false }
     subcomision:        { type: text, notnull: false }
     cchrc:              { type: boolean, notnull: false, default: false }
+
+EmpresaColaboradora:
+  columns:
+    nombre:             { type: text, notnull: true }
+    logo:               { type: text, notnull: true }
+    descripcion:        { type: text, notnull: false }
+    url:                { type: text, notnull: true }
