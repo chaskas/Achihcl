@@ -161,7 +161,9 @@
         <div class="post">
           <h2><?php echo link_to($noticia->getTitulo(), 'noticia/show?id=' . $noticia->getId()); ?></h2>
           <div style="clear: both"></div>
-          <?php echo tools::getResume($noticia->getRawValue()->getCuerpo()); ?>
+          <p>
+          <?php echo tools::getResume(strip_tags($noticia->getRawValue()->getCuerpo(),'<img>')); ?>
+          </p>
           <div style="clear: both"></div>
           <br/>
           <a class="more" href="<?php echo url_for('noticia/show?id=' . $noticia->getId()); ?>">Leer m&aacute;s</a>
