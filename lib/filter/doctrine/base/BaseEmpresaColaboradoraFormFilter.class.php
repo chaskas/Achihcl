@@ -14,7 +14,7 @@ abstract class BaseEmpresaColaboradoraFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'nombre'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'logo'        => new sfWidgetFormFilterInput(),
+      'logo'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'descripcion' => new sfWidgetFormFilterInput(),
       'url'         => new sfWidgetFormFilterInput(array('with_empty' => false)),
     ));

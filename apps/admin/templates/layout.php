@@ -37,17 +37,17 @@
                   Noticias
                 </a>
                 <ul>
-                  <li><a <?php if($sf_context->getActionName()=='new' && $sf_context->getModuleName()=='noticia') echo "class='current'"; ?> href="<?php echo url_for('noticia/new'); ?>">Nueva Noticia</a></li>
-                  <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='noticia') echo "class='current'"; ?> href="<?php echo url_for('noticia/index'); ?>">Listar noticias</a></li>
+                  <li><a <?php if($sf_context->getActionName()=='new' && $sf_context->getModuleName()=='noticia') echo "class='current'"; ?> href="<?php echo url_for('noticia/new'); ?>">Nueva</a></li>
+                  <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='noticia') echo "class='current'"; ?> href="<?php echo url_for('noticia/index'); ?>">Ver todas</a></li>
                 </ul>
               </li>
               <li>
-                <a href="<?php echo url_for('comision/index');?>" class="nav-top-item <?php if($sf_context->getModuleName()=='comisaaion') echo "current"; ?> ">
+                <a href="<?php echo url_for('empleos/index');?>" class="nav-top-item <?php if($sf_context->getModuleName()=='empleos') echo "current"; ?> ">
                   Bolsa de Trabajo
                 </a>
                 <ul>
-                  <li><a <?php if($sf_context->getActionName()=='newasd' && $sf_context->getModuleName()=='comisaaion') echo "class='current'"; ?> href="<?php echo url_for('comision/new'); ?>">Nueva comision</a></li>
-                  <li><a <?php if($sf_context->getActionName()=='indeasdx' && $sf_context->getModuleName()=='comiaasion') echo "class='current'"; ?> href="<?php echo url_for('comision/index'); ?>">Listar comisiones</a></li>
+                  <li><a <?php if($sf_context->getActionName()=='new' && $sf_context->getModuleName()=='empleos') echo "class='current'"; ?> href="<?php echo url_for('empleos/new'); ?>">Nuevo empleo</a></li>
+                  <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='empleos') echo "class='current'"; ?> href="<?php echo url_for('empleos/index'); ?>">Ver todos</a></li>
                 </ul>
               </li>
               <li>
@@ -55,8 +55,8 @@
                   Eventos
                 </a>
                 <ul>
-                  <li><a <?php if($sf_context->getActionName()=='new' && $sf_context->getModuleName()=='eventos') echo "class='current'"; ?> href="<?php echo url_for('eventos/new'); ?>">Nuevo Evento</a></li>
-                  <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='eventos') echo "class='current'"; ?> href="<?php echo url_for('eventos/index'); ?>">Listar Eventos</a></li>
+                  <li><a <?php if($sf_context->getActionName()=='new' && $sf_context->getModuleName()=='eventos') echo "class='current'"; ?> href="<?php echo url_for('eventos/new'); ?>">Nuevo</a></li>
+                  <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='eventos') echo "class='current'"; ?> href="<?php echo url_for('eventos/index'); ?>">Ver todos</a></li>
                 </ul>
               </li>
               <li>
@@ -65,7 +65,7 @@
                 </a>
                 <ul>
                   <li><a <?php if($sf_context->getActionName()=='new' && $sf_context->getModuleName()=='docs') echo "class='current'"; ?> href="<?php echo url_for('docs/new'); ?>">Publicar documento</a></li>
-                  <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='docs') echo "class='current'"; ?> href="<?php echo url_for('docs/index'); ?>">Listar Documentos</a></li>
+                  <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='docs') echo "class='current'"; ?> href="<?php echo url_for('docs/index'); ?>">Ver todos</a></li>
                 </ul>
               </li>
               <li>
@@ -75,7 +75,7 @@
                 <ul>
                   <li><a <?php if($sf_context->getActionName()=='new' && $sf_context->getModuleName()=='membresia') echo "class='current'"; ?> href="<?php echo url_for('membresia/new'); ?>">Nuevo miembro</a></li>
                   <li><a <?php if($sf_context->getActionName()=='aprobarMiembros' && $sf_context->getModuleName()=='membresia') echo "class='current'"; ?> href="<?php echo url_for('membresia/aprobarMiembros'); ?>">Ver postulantes</a></li>
-                  <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='membresia') echo "class='current'"; ?> href="<?php echo url_for('membresia/index'); ?>">Listar miembros</a></li>
+                  <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='membresia') echo "class='current'"; ?> href="<?php echo url_for('membresia/index'); ?>">Ver todos</a></li>
                   <li><a <?php if($sf_context->getActionName()=='email' && $sf_context->getModuleName()=='membresia') echo "class='current'"; ?> href="<?php echo url_for('membresia/email'); ?>">Email Masivo</a></li>
                 </ul>
               </li>
@@ -93,8 +93,8 @@
                   Links
                 </a>
                 <ul>
-                  <li><a <?php if($sf_context->getActionName()=='new' && $sf_context->getModuleName()=='links') echo "class='current'"; ?> href="<?php echo url_for('links/new'); ?>">Nuevo Link</a></li>
-                  <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='links') echo "class='current'"; ?> href="<?php echo url_for('links/index'); ?>">Listar Links</a></li>
+                  <li><a <?php if($sf_context->getActionName()=='new' && $sf_context->getModuleName()=='links') echo "class='current'"; ?> href="<?php echo url_for('links/new'); ?>">Nuevo</a></li>
+                  <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='links') echo "class='current'"; ?> href="<?php echo url_for('links/index'); ?>">Ver todos</a></li>
                 </ul>
               </li>
 

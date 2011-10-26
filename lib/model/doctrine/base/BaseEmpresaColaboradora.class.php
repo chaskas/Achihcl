@@ -35,7 +35,7 @@ abstract class BaseEmpresaColaboradora extends sfDoctrineRecord
              ));
         $this->hasColumn('logo', 'text', null, array(
              'type' => 'text',
-             'notnull' => false,
+             'notnull' => true,
              ));
         $this->hasColumn('descripcion', 'text', null, array(
              'type' => 'text',

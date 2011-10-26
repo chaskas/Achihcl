@@ -25,7 +25,7 @@ abstract class BaseEmpresaColaboradoraForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'nombre'      => new sfValidatorPass(),
-      'logo'        => new sfValidatorPass(array('required' => false)),
+      'logo'        => new sfValidatorPass(),
       'descripcion' => new sfValidatorPass(array('required' => false)),
       'url'         => new sfValidatorPass(),
     ));

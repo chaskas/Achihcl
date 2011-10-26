@@ -68,3 +68,20 @@ EmpresaColaboradora:
     logo:               { type: text, notnull: true }
     descripcion:        { type: text, notnull: false }
     url:                { type: text, notnull: true }
+
+Empleo:
+  actAs:                { Timestampable: ~ }
+  columns:
+    titulo:             { type: text, notnull: true }
+    descripcion:        { type: text, notnull: true }
+    ciudad:             { type: text, notnull: true }
+    region:             { type: text, notnull: true }
+    duracion:           { type: text, notnull: false }
+    tipo:               { type: text, notnull: true }
+    sueldo:             { type: text, notnull: false }
+    empresa:            { type: text, notnull: false }
+    nombre_contacto:    { type: text, notnull: true }
+    telefono_contacto:  { type: text, notnull: false }
+    email_contacto:     { type: text, notnull: true }
+
+
