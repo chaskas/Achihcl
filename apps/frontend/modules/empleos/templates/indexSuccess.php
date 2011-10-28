@@ -1,0 +1,66 @@
+<?php use_stylesheet('empleos-front.css'); ?>
+
+<?php 
+function tipo($id){
+  if($id == 0) return "Full Time";
+  else if($id == 1) return "Part Time";
+  else if($id == 2) return "Por Horas";
+  else if($id == 3) return "Temporal";
+  else if($id == 4) return "Freelance";
+}
+?>
+
+<div id="two-col" class="border">
+<div style="width:740px;float:left;padding-right:20px;">
+
+<div class="content-box">
+  <div class="content-box-header">
+    <h3 style="cursor: s-resize; ">Empleos</h3>
+    <div class="clear"></div>
+  </div>
+  <div class="content-box-content">
+    <div class="tab-content default-tab" id="tab1" style="display: block; ">
+      <table class="listados">
+        <thead>
+          <tr>
+            <th>Publicado el</th>
+            <th>T&iacute;tulo</th>
+            <th>Localidad</th>
+            <th>Tipo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($empleos as $empleo): ?>
+          <?php $i = 0; ?>
+            <tr <?php if ($i % 2 != 0)echo "class='alt-row'"; ?>>
+              <td><?php echo tools::formatDate($empleo->getCreatedAt()) ?></td>
+              <td><?php echo link_to($empleo->getTitulo(),'empleos/show?id='.$empleo->getId()); ?></td>
+              <td><?php echo $empleo->getLocalidad(); ?></td>
+	      <td><?php echo tipo($empleo->getTipo()); ?></td>
+            </tr>
+          <?php $i++; ?>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div id="right">
+    <div class="box1">
+        <h2>Men&uacute;</h2>
+        <ul class="catlist">
+          <li><a href="<?php echo url_for('static/index'); ?>">Inicio</a></li>
+          <li><a href="http://comision.achih.cl" target="blank">Comisiones</a></li>
+          <li><a href="<?php echo url_for('static/eventos'); ?>">Eventos</a></li>
+          <li><a href="<?php echo url_for('membresia/new'); ?>">Membres&iacute;a</a></li>
+          <li><a href="<?php echo url_for('static/docs'); ?>">Banco de Documentos</a></li>
+          <li><a href="<?php echo url_for('empleos/index'); ?>">Bolsa de Trabajo</a></li>
+          <li><a href="<?php echo url_for('static/links'); ?>">Links</a></li>
+          <li><a href="<?php echo url_for('static/contact'); ?>">Contacto</a></li>
+        </ul>
+      </div>
+  </div>
+</div>
