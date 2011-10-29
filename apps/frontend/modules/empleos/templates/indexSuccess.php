@@ -20,7 +20,7 @@ function tipo($id){
   </div>
   <div class="content-box-content">
     <div class="tab-content default-tab" id="tab1" style="display: block; ">
-      <table class="listados">
+      <table class="listados" style="width:100%">
         <thead>
           <tr>
             <th>Publicado el</th>

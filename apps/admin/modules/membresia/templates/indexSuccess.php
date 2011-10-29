@@ -28,10 +28,9 @@
           </thead>
 
           <tbody>
-          <?php foreach ($miembros as $miembro): ?>
+          <?php foreach ($pager->getResults() as $miembro): ?>
           <?php $i = 0; ?>
-            <tr <?php if ($i % 2 != 0
-              )echo "class='alt-row'"; ?>>
+            <tr <?php if ($i % 2 != 0)echo "class='alt-row'"; ?>>
               <td><?php echo $miembro->getNombreCompleto() ?></td>
               <td><?php echo $miembro->getEmpresa() ?></td>
               <td><?php echo $miembro->getEmail() ?></td>
@@ -43,8 +42,33 @@
             </td>
           </tr>
           <?php $i++; ?>
-<?php endforeach; ?>
+          <?php endforeach; ?>
         </tbody>
+        
+        <?php if ($pager->haveToPaginate()): ?>
+        <tfoot>
+          <tr>
+            <td colspan="5">
+              <div class="pagination">
+                <?php echo link_to('« Primera', 'membresia/index?page='.$pager->getFirstPage()) ?>
+                <?php echo link_to('« Anterior', 'membresia/index?page='.$pager->getPreviousPage()) ?>
+
+                <?php foreach ($pager->getLinks() as $page): ?>
+                  <?php if ($page == $pager->getPage()): ?>
+                    <a href="<?php echo url_for('membresia/index') ?>?page=<?php echo $page ?>" class="number current"><?php echo $page ?></a>
+                  <?php else: ?>
+                    <a href="<?php echo url_for('membresia/index') ?>?page=<?php echo $page ?>" class="number"><?php echo $page ?></a>
+                  <?php endif; ?>
+                <?php endforeach; ?>
+
+                <?php echo link_to('Siguiente »', 'membresia/index?page='.$pager->getNextPage()) ?>
+                <?php echo link_to('&Uacute;ltima »', 'membresia/index?page='.$pager->getLastPage()) ?>
+              </div>
+              <div class="clear"></div>
+            </td>
+          </tr>
+        </tfoot>
+        <?php endif ?>
 
       </table>
 

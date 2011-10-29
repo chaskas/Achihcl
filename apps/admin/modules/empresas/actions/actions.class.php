@@ -12,9 +12,13 @@ class empresasActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
-    $this->empresa_colaboradoras = Doctrine_Core::getTable('EmpresaColaboradora')
-      ->createQuery('a')
-      ->execute();
+    $this->pager = new sfDoctrinePager('EmpresaColaboradora', sfConfig::get('app_max_empresas'));
+    $this->pager->setQuery(
+            Doctrine::getTable('EmpresaColaboradora')
+            ->createQuery('a')
+            );
+    $this->pager->setPage($request->getParameter('page', 1));
+    $this->pager->init();
   }
 
   public function executeNew(sfWebRequest $request)

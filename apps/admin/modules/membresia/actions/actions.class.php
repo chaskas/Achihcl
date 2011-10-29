@@ -12,12 +12,16 @@ class membresiaActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
-    $this->miembros = Doctrine_Core::getTable('Miembro')
-      ->createQuery('a')
-      ->select('a.nombre','a.apellido','a.empresa','a.email','a.telefono')
-      ->where('a.isAprobado = 1')
-      ->orderBy('a.apellido ASC')
-      ->execute();
+    $this->pager = new sfDoctrinePager('Miembro', sfConfig::get('app_max_miembros'));
+    $this->pager->setQuery(
+            Doctrine_Core::getTable('Miembro')
+            ->createQuery('a')
+            ->select('a.nombre','a.apellido','a.empresa','a.email','a.telefono')
+            ->where('a.isAprobado = 1')
+            ->orderBy('a.apellido ASC')
+            );
+    $this->pager->setPage($request->getParameter('page', 1));
+    $this->pager->init();
   }
 
   public function executeNew(sfWebRequest $request)

@@ -12,15 +12,13 @@ class docsActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
-    $this->docs = Doctrine_Core::getTable('Doc')
-      ->createQuery('a')
-      ->execute();
-  }
-
-  public function executeShow(sfWebRequest $request)
-  {
-    $this->doc = Doctrine_Core::getTable('Doc')->find(array($request->getParameter('id')));
-    $this->forward404Unless($this->doc);
+    $this->pager = new sfDoctrinePager('Doc', sfConfig::get('app_max_docs'));
+    $this->pager->setQuery(
+            Doctrine::getTable('Doc')
+            ->createQuery('a')
+            );
+    $this->pager->setPage($request->getParameter('page', 1));
+    $this->pager->init();
   }
 
   public function executeNew(sfWebRequest $request)

@@ -12,15 +12,13 @@ class linksActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
-    $this->links = Doctrine_Core::getTable('Link')
-      ->createQuery('a')
-      ->execute();
-  }
-
-  public function executeShow(sfWebRequest $request)
-  {
-    $this->link = Doctrine_Core::getTable('Link')->find(array($request->getParameter('id')));
-    $this->forward404Unless($this->link);
+    $this->pager = new sfDoctrinePager('Link', sfConfig::get('app_max_links'));
+    $this->pager->setQuery(
+            Doctrine::getTable('Link')
+            ->createQuery('a')
+            );
+    $this->pager->setPage($request->getParameter('page', 1));
+    $this->pager->init();
   }
 
   public function executeNew(sfWebRequest $request)

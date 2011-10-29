@@ -12,18 +12,16 @@ class noticiaActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
-    $this->noticias = Doctrine_Core::getTable('Noticia')
-      ->createQuery('a')
-      ->OrderBy('a.created_at DESC')
-      ->execute();
+    $this->pager = new sfDoctrinePager('Noticia', sfConfig::get('app_max_noticias'));
+    $this->pager->setQuery(
+            Doctrine::getTable('Noticia')
+            ->createQuery('a')
+            ->orderBy('a.created_at DESC')
+            );
+    $this->pager->setPage($request->getParameter('page', 1));
+    $this->pager->init();
   }
-
-  public function executeShow(sfWebRequest $request)
-  {
-    $this->noticia = Doctrine_Core::getTable('Noticia')->find(array($request->getParameter('id')));
-    $this->forward404Unless($this->noticia);
-  }
-
+  
   public function executeNew(sfWebRequest $request)
   {
     $this->form = new NoticiaForm();

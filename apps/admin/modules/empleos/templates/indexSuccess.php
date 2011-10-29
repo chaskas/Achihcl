@@ -27,7 +27,7 @@
         </thead>
 
         <tbody>
-          <?php foreach ($empleos as $empleo): ?>
+          <?php foreach ($pager->getResults() as $empleo): ?>
           <?php $i = 0; ?>
             <tr <?php if ($i % 2 != 0)echo "class='alt-row'"; ?>>
               <td><?php echo tools::formatDate($empleo->getCreatedAt()) ?></td>
@@ -42,6 +42,31 @@
           <?php endforeach; ?>
         </tbody>
 
+        <?php if ($pager->haveToPaginate()): ?>
+        <tfoot>
+          <tr>
+            <td colspan="4">
+              <div class="pagination">
+                <?php echo link_to('« Primera', 'empleos/index?page='.$pager->getFirstPage()) ?>
+                <?php echo link_to('« Anterior', 'empleos/index?page='.$pager->getPreviousPage()) ?>
+
+                <?php foreach ($pager->getLinks() as $page): ?>
+                  <?php if ($page == $pager->getPage()): ?>
+                    <a href="<?php echo url_for('empleos/index') ?>?page=<?php echo $page ?>" class="number current"><?php echo $page ?></a>
+                  <?php else: ?>
+                    <a href="<?php echo url_for('empleos/index') ?>?page=<?php echo $page ?>" class="number"><?php echo $page ?></a>
+                  <?php endif; ?>
+                <?php endforeach; ?>
+
+                <?php echo link_to('Siguiente »', 'empleos/index?page='.$pager->getNextPage()) ?>
+                <?php echo link_to('&Uacute;ltima »', 'empleos/index?page='.$pager->getLastPage()) ?>
+              </div>
+              <div class="clear"></div>
+            </td>
+          </tr>
+        </tfoot>
+        <?php endif ?>
+        
       </table>
 
     </div>

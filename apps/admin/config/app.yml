@@ -3,3 +3,12 @@
 
 # default values
 #all:
+
+all:
+  max_noticias: 15
+  max_miembros: 30
+  max_links:    15
+  max_eventos:  10
+  max_empresas: 15
+  max_empleos:  15
+  max_docs:     15

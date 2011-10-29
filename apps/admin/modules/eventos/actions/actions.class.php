@@ -12,15 +12,13 @@ class eventosActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
-    $this->eventos = Doctrine_Core::getTable('Evento')
-      ->createQuery('a.inicio_at DESC')
-      ->execute();
-  }
-
-  public function executeShow(sfWebRequest $request)
-  {
-    $this->evento = Doctrine_Core::getTable('Evento')->find(array($request->getParameter('id')));
-    $this->forward404Unless($this->evento);
+    $this->pager = new sfDoctrinePager('Evento', sfConfig::get('app_max_eventos'));
+    $this->pager->setQuery(
+            Doctrine_Core::getTable('Evento')
+            ->createQuery('a.inicio_at DESC')
+            );
+    $this->pager->setPage($request->getParameter('page', 1));
+    $this->pager->init();
   }
 
   public function executeNew(sfWebRequest $request)
