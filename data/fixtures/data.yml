@@ -1,0 +1,69 @@
+Empleo:
+  Empleo_1:
+    titulo: 'Asesoria de Inspeccion Obra Hospital de Talca'
+    descripcion: "<div style=\"color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: #ffffff; background-position: initial initial; background-repeat: initial initial; margin: 8px;\">\r\n<p>Se requiere Constructor Civil para la Asesoria a la Inspecci&oacute;n Tecnica de Obra (AITO) hospital de Talca, presentarse el martes 11 en Talca, contrato por 27 meses con el Servicio de Salud del Maule, renta considerada para este cargo (Inspector Ayudante de Terreno) es de $ 2.000.000.- brutos. Comunicarse con el Sr. Sergio Teke en el telefono 76955757 y/o correo steke@consorci.org</p>\r\n</div>"
+    ciudad: Talca
+    region: Maule
+    duracion: '27 meses'
+    tipo: '2'
+    sueldo: 2.000.000
+    empresa: CHC
+    nombre_contacto: 'Sergio Teke'
+    telefono_contacto: '76955757 '
+    email_contacto: steke@consorci.org
+    created_at: '2011-10-27 13:04:17'
+    updated_at: '2011-10-28 15:00:46'
+  Empleo_2:
+    titulo: 'Constructor Civil'
+    descripcion: "<h1><span style=\"font-family: georgia,palatino; font-size: small;\">Se busca profesional para Inspeccion de contruccion de Hospital de Talca</span></h1>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-family: georgia,palatino; font-size: small;\">Se requiere Constructor Civil para la Asesoria a la Inspecci&oacute;n Tecnica de Obra (AITO) hospital de Talca, presentarse el martes 11 en Talca, contrato por 27 meses con el Servicio de Salud del Maule, renta considerada para este cargo (Inspector Ayudante de Terreno) es de $ 2.000.000.- brutos. Comunicarse con el Sr. Sergio Teke en el telefono 76955757 y/o correo steke@consorci.org</span></p>"
+    ciudad: Talca
+    region: 'Región del Maule'
+    duracion: '27 Meses'
+    tipo: '0'
+    sueldo: $2000000
+    empresa: 'Hospital de Talca'
+    nombre_contacto: 'Sr. Sergio Teke'
+    telefono_contacto: '76955757'
+    email_contacto: steke@consorci.org
+    created_at: '2011-10-28 13:42:20'
+    updated_at: '2011-10-28 13:42:20'
+  Empleo_3:
+    titulo: asd
+    descripcion: '<p>asd</p>'
+    ciudad: asd
+    region: asd
+    duracion: ''
+    tipo: '0'
+    sueldo: ''
+    empresa: ''
+    nombre_contacto: asd
+    telefono_contacto: '76955757'
+    email_contacto: a@a.cl
+    created_at: '2011-10-28 15:24:06'
+    updated_at: '2011-10-28 15:24:06'
+EmpresaColaboradora:
+  EmpresaColaboradora_1:
+    nombre: Siemens
+    logo: 51d6441f67c1f0fcc62f8ed3faa4bfeb072d1f49.png
+    descripcion: Siemens
+    url: 'http://www.siemens.cl'
+  EmpresaColaboradora_2:
+    nombre: Philips
+    logo: 139c17c911203f97bcecfc8abc5ebadc075d2905.png
+    descripcion: Philips
+    url: 'http://www.philips.cl/'
+  EmpresaColaboradora_3:
+    nombre: 'General Electric'
+    logo: dc6512ebeac1a38e545a6cad0d6436c9ba93c04f.png
+    descripcion: 'General Electric'
+    url: 'http://www.gechile.cl/'
+  EmpresaColaboradora_4:
+    nombre: Arquimed
+    logo: c0feea3642dd6ebbbf544dd0696d52848e85c1d5.png
+    descripcion: Arquimed
+    url: 'http://www.arquimed.cl/'
+  EmpresaColaboradora_5:
+    nombre: PVequip
+    logo: ''
+    descripcion: PVequip
+    url: 'http://www.pvequip.cl'
