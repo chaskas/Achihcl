@@ -8,3 +8,4 @@ all:
     recaptcha:
         private_key: 6LepBMkSAAAAACjIOxnqlAqIEjYG38YHIbSgwdT_
         public_key:  6LepBMkSAAAAAIVF6_vw2GmwhgqbiqbOGDkchmvk
+    max_noticias_on_index: 5

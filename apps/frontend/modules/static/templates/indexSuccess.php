@@ -157,7 +157,7 @@
   </div>
   <div id="left">
     <div id="blog">
-      <?php foreach ($noticias as $noticia): ?>
+      <?php foreach ($pager->getResults() as $noticia): ?>
         <div class="post">
           <h2><?php echo link_to($noticia->getTitulo(), 'noticia/show?id=' . $noticia->getId()); ?></h2>
           <div style="clear: both"></div>
@@ -170,6 +170,29 @@
           <br/>
         </div>
       <?php endforeach; ?>
+      
+      <?php if ($pager->haveToPaginate()): ?>
+        <center>
+        <div class="pagination">
+          <?php echo link_to('« Primera', 'static/index?page='.$pager->getFirstPage()) ?>
+          <?php echo link_to('« Anterior', 'static/index?page='.$pager->getPreviousPage()) ?>
+
+          <?php foreach ($pager->getLinks() as $page): ?>
+            <?php if ($page == $pager->getPage()): ?>
+              <a href="<?php echo url_for('static/index') ?>?page=<?php echo $page ?>" class="number current"><?php echo $page ?></a>
+            <?php else: ?>
+              <a href="<?php echo url_for('static/index') ?>?page=<?php echo $page ?>" class="number"><?php echo $page ?></a>
+            <?php endif; ?>
+          <?php endforeach; ?>
+
+          <?php echo link_to('Siguiente »', 'static/index?page='.$pager->getNextPage()) ?>
+          <?php echo link_to('&Uacute;ltima »', 'static/index?page='.$pager->getLastPage()) ?>
+        </div>
+        </center>
+        <div class="clear"></div>
+            
+        <?php endif ?>
+      
       </div>
     </div>
     <div id="right">
