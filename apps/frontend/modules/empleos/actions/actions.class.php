@@ -17,10 +17,16 @@ class empleosActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    $this->empleos = Doctrine_Core::getTable('Empleo')
-      ->createQuery('a')
-      ->OrderBy('created_at DESC')
-      ->execute();
+    $this->pager = new sfDoctrinePager('Noticia', sfConfig::get('app_max_empleos_on_index'));
+    
+    $this->pager->setQuery(
+            Doctrine::getTable('Empleo')
+            ->createQuery('a')
+            ->orderBy('a.created_at DESC')
+            );
+    
+    $this->pager->setPage($request->getParameter('page', 1));
+    $this->pager->init();
   }
   public function executeShow(sfWebRequest $request)
   {

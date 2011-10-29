@@ -30,7 +30,7 @@ function tipo($id){
           </tr>
         </thead>
         <tbody>
-          <?php foreach ($empleos as $empleo): ?>
+          <?php foreach ($pager->getResults() as $empleo): ?>
           <?php $i = 0; ?>
             <tr <?php if ($i % 2 != 0)echo "class='alt-row'"; ?>>
               <td><?php echo tools::formatDate($empleo->getCreatedAt()) ?></td>
@@ -41,6 +41,32 @@ function tipo($id){
           <?php $i++; ?>
           <?php endforeach; ?>
         </tbody>
+        <?php if ($pager->haveToPaginate()): ?>
+        <tfoot>
+          <tr>
+            <td colspan="4">
+              <center>
+              <div class="pagination">
+                <?php echo link_to('« Primera', 'empleos/index?page='.$pager->getFirstPage()) ?>
+                <?php echo link_to('« Anterior', 'empleos/index?page='.$pager->getPreviousPage()) ?>
+
+                <?php foreach ($pager->getLinks() as $page): ?>
+                  <?php if ($page == $pager->getPage()): ?>
+                    <a href="<?php echo url_for('empleos/index') ?>?page=<?php echo $page ?>" class="number current"><?php echo $page ?></a>
+                  <?php else: ?>
+                    <a href="<?php echo url_for('empleos/index') ?>?page=<?php echo $page ?>" class="number"><?php echo $page ?></a>
+                  <?php endif; ?>
+                <?php endforeach; ?>
+
+                <?php echo link_to('Siguiente »', 'empleos/index?page='.$pager->getNextPage()) ?>
+                <?php echo link_to('&Uacute;ltima »', 'empleos/index?page='.$pager->getLastPage()) ?>
+              </div>
+              </center>
+              <div class="clear"></div>
+            </td>
+          </tr>
+        </tfoot>
+        <?php endif; ?>
       </table>
     </div>
   </div>
@@ -49,18 +75,6 @@ function tipo($id){
 </div>
 
 <div id="right">
-    <div class="box1">
-        <h2>Men&uacute;</h2>
-        <ul class="catlist">
-          <li><a href="<?php echo url_for('static/index'); ?>">Inicio</a></li>
-          <li><a href="http://comision.achih.cl" target="blank">Comisiones</a></li>
-          <li><a href="<?php echo url_for('static/eventos'); ?>">Eventos</a></li>
-          <li><a href="<?php echo url_for('membresia/new'); ?>">Membres&iacute;a</a></li>
-          <li><a href="<?php echo url_for('static/docs'); ?>">Banco de Documentos</a></li>
-          <li><a href="<?php echo url_for('empleos/index'); ?>">Bolsa de Trabajo</a></li>
-          <li><a href="<?php echo url_for('static/links'); ?>">Links</a></li>
-          <li><a href="<?php echo url_for('static/contact'); ?>">Contacto</a></li>
-        </ul>
-      </div>
-  </div>
+      <?php include_partial('static/menu_right'); ?>
+</div>
 </div>

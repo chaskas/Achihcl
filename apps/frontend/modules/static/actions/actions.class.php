@@ -17,11 +17,6 @@ class staticActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-//    $this->noticias = Doctrine_Core::getTable('Noticia')
-//      ->createQuery('a')
-//      ->orderBy('a.created_at DESC')
-//      ->execute();
-    
     $this->pager = new sfDoctrinePager('Noticia', sfConfig::get('app_max_noticias_on_index'));
     $this->pager->setQuery(Doctrine::getTable('Noticia')
             ->createQuery('a')

@@ -1,4 +1,7 @@
-<div class="border">
+<div id="two-col"  class="border">
+  <div id="left">
+    <h1>Eventos</h1>
+    Eventos relacionados con la Asociaci&oacute;n Chilena de Ingenier&iacute;a Hospitalaria.
     <div id="blog">
       <?php foreach ($eventos as $evento) : ?>
           <div class="post">
@@ -17,4 +20,8 @@
           <div style="clear: both;"></div>
       <?php endforeach; ?>
     </div>
+  </div>
+  <div id="right">
+      <?php include_partial('menu_right'); ?>
+  </div>
 </div>

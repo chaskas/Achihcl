@@ -18,4 +18,7 @@
       <?php endforeach; ?>
     </div>
   </div>
+  <div id="right">
+      <?php include_partial('menu_right'); ?>
+  </div>
 </div>
