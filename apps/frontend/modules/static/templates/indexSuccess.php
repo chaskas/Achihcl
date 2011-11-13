@@ -137,6 +137,7 @@
 </div>
 </div>
 <div id="two-col" class="page">
+  <?php if(count($empresas_colaboradoras) != 0) : ?>
   <div id="left-menu">
     <div class="box1">
     <h2>Empresas Colaboradoras</h2>
@@ -155,6 +156,7 @@
       </ul>
     </div>
   </div>
+  <?php endif; ?>
   <div id="left">
     <div id="blog">
       <?php foreach ($pager->getResults() as $noticia): ?>
@@ -195,7 +197,7 @@
       
       </div>
     </div>
-    <div id="right">
+    <div id="right" <?php if(count($empresas_colaboradoras) == 0) echo "style='width: 280px;'"; ?>>
       <?php include_partial('menu_right'); ?>
     </div>
 </div>

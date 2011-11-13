@@ -11,8 +11,8 @@
     <li><a href="<?php echo url_for('static/contact'); ?>">Contacto</a></li>
   </ul>
 </div>
-<div class="box2">
+<!--<div class="box2">
   <h2>Estamos en construcci&oacute;n</h2>
   <div id="twitter"></div>
   <span class="cite">Disculpe las molestias...</span>
-</div>
+</div>-->
