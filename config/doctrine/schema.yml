@@ -84,8 +84,12 @@ Empleo:
     telefono_contacto:  { type: text, notnull: false }
     email_contacto:     { type: text, notnull: true }
 
-
-MailMessage:
- actAs: { Timestampable: ~ }
- columns:
-   message: { type: clob, notnull: true }
+Banner:
+  actAs:
+    JCroppable:
+      images:     [ slide ]
+    Timestampable: ~
+  columns:
+    titulo:       { type: text, notnull: true }
+    descripcion:  { type: text, notnull: true }
+    enlace:       { type: text, notnull: false }

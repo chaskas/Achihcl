@@ -26,6 +26,12 @@ class staticActions extends sfActions
     $this->pager->setPage($request->getParameter('page', 1));
     $this->pager->init();
     
+    $this->banners = Doctrine_Core::getTable('Banner')
+            ->createQuery()
+            ->orderBy('created_at DESC')
+            ->limit('10')
+            ->execute();
+    
     $this->empresas_colaboradoras = Doctrine_Core::getTable('EmpresaColaboradora')
       ->createQuery('a')
       ->orderBy('a.nombre ASC')
