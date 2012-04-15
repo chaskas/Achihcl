@@ -12,3 +12,22 @@ all:
   max_empresas: 15
   max_empleos:  15
   max_docs:     15
+
+  sfImageTransformPlugin:
+    default_adapter:  GD
+    mime_type:
+      auto_detect:    true
+      library:        gd_mime_type
+      
+  sfDoctrineJCroppablePlugin:
+    models:
+      Banner:
+        directory:      images/banner
+        images:
+          slide:
+            padding:    { percent: 0, color: "#ffffff" }
+            ratio:      2.9375
+            sizes:
+              banner:   { width: 940 }
+              mini:     { width: 235 }
+  max_width:            1024

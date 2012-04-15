@@ -5,8 +5,20 @@
 #all:
 
 all:
-    recaptcha:
-        private_key: 6LepBMkSAAAAACjIOxnqlAqIEjYG38YHIbSgwdT_
-        public_key:  6LepBMkSAAAAAIVF6_vw2GmwhgqbiqbOGDkchmvk
-    max_noticias_on_index: 5
-    max_empleos_on_index: 15
+  recaptcha:
+      private_key: 6LepBMkSAAAAACjIOxnqlAqIEjYG38YHIbSgwdT_
+      public_key:  6LepBMkSAAAAAIVF6_vw2GmwhgqbiqbOGDkchmvk
+  max_noticias_on_index: 5
+  max_empleos_on_index: 15
+  
+  sfDoctrineJCroppablePlugin:
+    models:
+      Banner:
+        directory:      images/banner
+        images:
+          slide:
+            padding:    { percent: 0, color: "#ffffff" }
+            ratio:      2.9375
+            sizes:
+              banner:   { width: 940 }
+              mini:     { width: 235 }
