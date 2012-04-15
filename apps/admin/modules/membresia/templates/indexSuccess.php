@@ -22,7 +22,7 @@
               <th>Nombre completo</th>
               <th>Instituci&oacute;n</th>
               <th>Email</th>
-              <th>Tel&eacute;fono</th>
+              <th>Celular</th>
               <th>Opciones</th>
             </tr>
           </thead>
@@ -34,7 +34,7 @@
               <td><?php echo $miembro->getNombreCompleto() ?></td>
               <td><?php echo $miembro->getEmpresa() ?></td>
               <td><?php echo $miembro->getEmail() ?></td>
-              <td><?php echo $miembro->getTelefono() ?></td>
+              <td><?php echo $miembro->getCelular() ?></td>
               <td>
                 <!-- Icons -->
               <?php echo link_to(image_tag('icons/pencil.png', array('alt' => 'Editar', 'title' => 'Editar')), 'membresia/edit?id=' . $miembro->getId()) ?>

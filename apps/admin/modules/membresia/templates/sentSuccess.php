@@ -11,7 +11,7 @@
   <div class="content-box-content">
 
     <div class="tab-content default-tab" id="tab1" style="display: block; ">
-      Su mensaje ha sido enviado a todos los miembros.
+      Su mensaje ha sido ha sido enviado..
     </div>
 
   </div>

@@ -18,7 +18,12 @@ class NoticiaForm extends BaseNoticiaForm
          theme_advanced_buttons3 : "",
          theme_advanced_resizing : true,
          theme_advanced_resizing_min_width : 400,
-         theme_advanced_resizing_min_height: 200'));
+         theme_advanced_resizing_min_height: 200,
+         plugins: "imagemanager",
+         imagemanager_relative_urls:         false,
+         imagemanager_remove_script_host:    false,
+         relative_urls:                         false,
+         remove_script_host:                    false'));
 
     $this->widgetSchema['created_at']= new sfWidgetFormJQueryDate(array('config' => '{showOn: "button",buttonImage: "/images/icons/calendar.png",buttonImageOnly: true,changeMonth: true,changeYear: true}','culture'=>'es'));
     $this->widgetSchema['created_at']->getOption('date_widget')->setOption('format', '%day%%month%%year%');

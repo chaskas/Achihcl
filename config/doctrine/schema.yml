@@ -85,3 +85,7 @@ Empleo:
     email_contacto:     { type: text, notnull: true }
 
 
+MailMessage:
+ actAs: { Timestampable: ~ }
+ columns:
+   message: { type: clob, notnull: true }

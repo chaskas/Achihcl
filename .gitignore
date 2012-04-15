@@ -3,3 +3,4 @@ log/*
 web/uploads/*
 nbproject/*
 config/databases.yml
+/plugins/.registry/

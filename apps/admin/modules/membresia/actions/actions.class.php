@@ -96,13 +96,12 @@ class membresiaActions extends sfActions
     {
       //Enviar emails masivos
 
-      $this->miembros = Doctrine_Core::getTable('Miembro')
+      $miembros = Doctrine_Core::getTable('Miembro')
         ->createQuery('a')
         ->select('a.email')
         ->where('a.isAprobado = 1')
         ->execute();
-
-      foreach($this->miembros as $miembro) {
+      
         $message =  "<html>".
                     "<head><title>".$form->getValue('subject')."</title></head>".
                     "<body>".
@@ -112,8 +111,8 @@ class membresiaActions extends sfActions
 
         $mensaje = Swift_Message::newInstance()
           ->setFrom(array('contacto@achih.cl' => 'Contacto ACHIH'))
-          ->setTo(array($miembro->getEmail())) //CAMBIAR AL CORREO DE DESTINO DEFINITIVO
-          ->setBcc(array('admin@webdevel.cl'))
+//          ->setTo(array($miembro->getEmail())) //CAMBIAR AL CORREO DE DESTINO DEFINITIVO
+//          ->setBcc(array('admin@webdevel.cl'))
           ->setSubject($form->getValue('subject'))
           ->setBody($message,'text/html')
         ;
@@ -123,9 +122,13 @@ class membresiaActions extends sfActions
         $headers->addTextHeader('From', 'ACHIH <contacto@achih.cl>');
         $headers->addTextHeader('X-Mailer', 'SwiftMailer v4.0.6');
 
-        $this->getMailer()->send($mensaje);
+        foreach($miembros as $miembro)
+        {
+          $mensaje->addTo($miembro->getEmail());
+        }
         
-      }
+        $this->getMailer()->send($mensaje);
+
       $this->redirect('membresia/sent');
     }
   }

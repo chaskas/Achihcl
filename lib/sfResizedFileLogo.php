@@ -71,7 +71,7 @@ class sfResizedFileLogo extends sfValidatedFile
 		}
 
 		// copy the temp file to the destination file
-		$thumbnail = new sfThumbnail(124, 124, true, true, 100,'sfImageMagickAdapter');
+		$thumbnail = new sfThumbnail(124, 124, true, true, 100);
 		$thumbnail->loadFile($this->getTempName());
 		$thumbnail->save($smallFile, 'image/png');
 
