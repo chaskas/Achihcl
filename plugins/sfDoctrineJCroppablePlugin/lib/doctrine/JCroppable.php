@@ -139,6 +139,7 @@ class Doctrine_Template_JCroppable extends Doctrine_Template
           array('mime_types' => 'Unsupported image type (%mime_type%)')
         )
       );
+      
     }
   }
   
@@ -270,7 +271,8 @@ class Doctrine_Template_JCroppable extends Doctrine_Template
       $img->saveAs($dir . DIRECTORY_SEPARATOR . $original);
     }
     
-    $img->resize(400, null);
+    if($img->getWidth() > sfConfig::get('app_max_width'))$img->resize(sfConfig::get('app_max_width'), ($img->getHeight()*sfConfig::get('app_max_width'))/$img->getWidth()); //EDITADO POR ricamphe@gmail.com
+    
     $img->saveAs($dir . DIRECTORY_SEPARATOR . $editable);
     
     $this->getInvoker()->{$fieldName . '_x1'} = 0;

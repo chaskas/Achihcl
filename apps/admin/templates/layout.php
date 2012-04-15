@@ -42,6 +42,15 @@
                 </ul>
               </li>
               <li>
+                <a href="<?php echo url_for('banner/index');?>" class="nav-top-item <?php if($sf_context->getModuleName()=='banner') echo "current"; ?> ">
+                  Banners
+                </a>
+                <ul>
+                  <li><a <?php if($sf_context->getActionName()=='new' && $sf_context->getModuleName()=='banner') echo "class='current'"; ?> href="<?php echo url_for('banner/new'); ?>">Nuevo</a></li>
+                  <li><a <?php if($sf_context->getActionName()=='index' && $sf_context->getModuleName()=='banner') echo "class='current'"; ?> href="<?php echo url_for('banner/index'); ?>">Ver todos</a></li>
+                </ul>
+              </li>
+              <li>
                 <a href="<?php echo url_for('empleos/index');?>" class="nav-top-item <?php if($sf_context->getModuleName()=='empleos') echo "current"; ?> ">
                   Bolsa de Trabajo
                 </a>
