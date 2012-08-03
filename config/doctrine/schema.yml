@@ -93,3 +93,4 @@ Banner:
     titulo:       { type: text, notnull: true }
     descripcion:  { type: text, notnull: true }
     enlace:       { type: text, notnull: false }
+    activo:				{ type: boolean, notnull: true, default: false }

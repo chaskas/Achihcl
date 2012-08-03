@@ -28,8 +28,8 @@ class staticActions extends sfActions
     
     $this->banners = Doctrine_Core::getTable('Banner')
             ->createQuery()
+	    ->where('activo = true')
             ->orderBy('created_at DESC')
-            ->limit('10')
             ->execute();
     
     $this->empresas_colaboradoras = Doctrine_Core::getTable('EmpresaColaboradora')

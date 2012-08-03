@@ -9,15 +9,24 @@
   <?php if (!$form->getObject()->isNew()): ?>
     <input type="hidden" name="sf_method" value="put" />
   <?php endif; ?>
-
+    
+    
   <p>
-        <label>
+        <label style="float: left; padding-right: 20px;width:10%;">
+          Activo:
+          <br/>
+          <?php echo $form['activo']->renderError(); ?>
+          <?php echo $form['activo']->render(); ?>
+        </label>
+
+        <label style="float: left; padding-right: 20px;width:85%;">
           T&iacute;tulo:
           <br/>
           <?php echo $form['titulo']->renderError(); ?>
           <?php echo $form['titulo']->render(array('class' => 'text-input large-input')); ?>
         </label>
   </p>
+  <div style="clear: both;"></div>
   <p>
         <label>
           Descripci&oacute;n:
@@ -42,6 +51,7 @@
           <?php echo $form['slide']->render(); ?>
         </label>
   </p>
+  
 
   <p>
     &nbsp;<a href="<?php echo url_for('banner/index') ?>">Volver a la lista</a>

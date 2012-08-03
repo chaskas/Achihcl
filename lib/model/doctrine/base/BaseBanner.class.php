@@ -8,13 +8,16 @@
  * @property text $titulo
  * @property text $descripcion
  * @property text $enlace
+ * @property boolean $activo
  * 
- * @method text   getTitulo()      Returns the current record's "titulo" value
- * @method text   getDescripcion() Returns the current record's "descripcion" value
- * @method text   getEnlace()      Returns the current record's "enlace" value
- * @method Banner setTitulo()      Sets the current record's "titulo" value
- * @method Banner setDescripcion() Sets the current record's "descripcion" value
- * @method Banner setEnlace()      Sets the current record's "enlace" value
+ * @method text    getTitulo()      Returns the current record's "titulo" value
+ * @method text    getDescripcion() Returns the current record's "descripcion" value
+ * @method text    getEnlace()      Returns the current record's "enlace" value
+ * @method boolean getActivo()      Returns the current record's "activo" value
+ * @method Banner  setTitulo()      Sets the current record's "titulo" value
+ * @method Banner  setDescripcion() Sets the current record's "descripcion" value
+ * @method Banner  setEnlace()      Sets the current record's "enlace" value
+ * @method Banner  setActivo()      Sets the current record's "activo" value
  * 
  * @package    achihcl
  * @subpackage model
@@ -37,6 +40,11 @@ abstract class BaseBanner extends sfDoctrineRecord
         $this->hasColumn('enlace', 'text', null, array(
              'type' => 'text',
              'notnull' => false,
+             ));
+        $this->hasColumn('activo', 'boolean', null, array(
+             'type' => 'boolean',
+             'notnull' => true,
+             'default' => false,
              ));
     }
 
